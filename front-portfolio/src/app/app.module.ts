@@ -9,12 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
+import { ExpLabComponent } from './componentes/exp-lab/exp-lab.component';
 @NgModule({
   declarations: [
     AppComponent,
     EncabezadoComponent,
     MisDatosComponent,
-    AcercaDeComponent
+    AcercaDeComponent,
+    ExpLabComponent
   ],
   imports: [
     BrowserModule,

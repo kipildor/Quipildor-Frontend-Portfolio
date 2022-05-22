@@ -1,0 +1,65 @@
+/* Título de la sección "Experiencia Laboral"  */
+.tituloExpLab {
+}
+
+/* Resumen de la sección "Experiencia Laboral"  
+#contResumenAcercaDeMi {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+*/
+.text-expLab {
+/*    padding-top: 1rem;*/
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: inline;
+    float: left;
+}
+#text-expLab-1 {
+    font-style: italic;
+    font-weight:bold;
+    display: inline;
+}
+.contBloquesExpLab {
+    margin-top: 1rem;
+}
+.contIndividual-expLab {
+    /*margin-top: 1rem;*/
+    display: flex;
+    flex-wrap: nowrap;
+}
+.contInfo-expLab {
+
+}
+.nombreEmpresa-expLab {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fechas-expLab {
+    font-style: italic;
+}
+.descripcion-expLab {
+
+}
+.contImg-expLab {
+    padding-left: 1rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    */
+    text-align: center;
+}
+.logoExpLab {
+    max-height: 5rem;
+    vertical-align: center;
+}
+.contBtn-expLab {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
