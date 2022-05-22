@@ -1,0 +1,85 @@
+
+
+.contBloquesSkill {
+    margin-top: 0.5rem;
+    
+}
+.contIndividual-skill {
+    margin-top: 1rem;
+    /*margin-left: 2rem;*/
+    padding-left: 2rem;
+    display: flex_;
+    flex-wrap: nowrap_;
+    align-items: center;
+    /*justify-content: flex-start;
+    float: left;*/
+}
+.contInd-skill-izq {
+    display: inline;
+    float: left;
+}
+.contInd-skill-izq h3 {
+    margin-bottom: 0;
+    padding-left: 1rem;
+}
+.progress-value {
+    margin-top: -0.5rem;
+}
+.contInfo-skill {
+
+}
+
+.contBtn-skill {
+    display: inline_;
+    float: left;
+}
+
+/*
+Código de 
+https://freefrontend.com/bootstrap-progress-bars/
+https://bestjquery.com/tutorial/progress-bar/demo78/
+
+*/
+.progress-title{
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 10px;
+}
+.progress-outer{
+    background: #fff;
+    padding: 5px 60px 5px 5px;
+    border: 5px solid #bebfbf;
+    border-radius: 45px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.progress{
+    background: #bebfbf;
+    border-radius: 20px;
+    margin: 0;
+}
+.progress .progress-bar{
+    border-radius: 20px;
+    box-shadow: none;
+    animation: animate-positive 2s;
+}
+.progress .progress-value{
+    font-size: 20px;
+    font-weight: 700;
+    color: #7e806b;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+}
+
+.progress-bar {
+    background-color: red;
+}
+.separadorSkill {
+    visibility: visible;
+}
+
+@keyframes animate-positive{
+    0%{ width: 0; }
+}
