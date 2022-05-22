@@ -1,1 +1,117 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+html{
+    font-size: 15px;
+}
+body{
+    /*
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    */
+    background-color: blueviolet;
+    
+}
+
+.contPP{
+    background-color: aqua;
+    
+}
+/* Banner junto a la ficha de Acerca de mi */
+.mat-card {
+    border-radius: 32px;
+    /*margin: 20px 10px;*/
+    margin: 20px 0px;
+    padding: 10px;
+    border-color: #0a66c2;
+}
+
+.ficha {
+    padding: 16px;
+}
+.ficha .tituloFicha {
+    font-size: 1.8rem;
+    display: inline;
+    font-weight: 500;
+    line-height: 1.25;
+    word-wrap: break-word;
+    word-break: break-word;
+
+}
+.lapizALaDerecha {
+    display: inline;
+    float: right;
+}
+.lapizAlLado {
+    display: inline;
+    float: left;
+}
+
+/*
+ul.items-list {
+    list-style: none inside;
+}
+ul.items-list li {
+    display: flex;
+    margin: 10px 0;
+}
+ul.items-list li div.data-container {
+    flex-grow: 1;
+}
+ul.items-list li div.data-container a {
+    display: flex;
+    color: black;
+}
+*/
+.btn-edit {
+    /*float: left;*/
+    /*padding-top: 1rem;*/
+    padding-left: 1rem;
+    
+}
+.btn-delete {
+    /*float: left;*/
+    /*padding-top: 1rem;*/
+    padding-left: 1rem;
+    display: block;
+    /*display: none;*/
+}
+
+.limpiarFloat {
+    clear: both;
+}
+
+
+.centrar-h_ {
+    /*padding-left: 5rem;*/
+    text-align: center;
+}
+
+/***************************************/
+
+ul.items-list {
+    list-style: none inside;
+}
+ul.items-list li {
+    display: flex;
+    margin: 10px 0;
+}
+ul.items-list li div.data-container {
+    flex-grow: 1;
+}
+ul.items-list li div.data-container a {
+    display: flex;
+    color: black;
+}
+
+
+
+.btn-edit {
+    float: left;
+}
+
+.limpiarFloat {
+    clear: both;
+}

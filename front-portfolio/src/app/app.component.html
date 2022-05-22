@@ -1,2 +1,549 @@
-<button type="button" class="btn btn-danger">Danger</button>
+<div class="container contPP">
+    <!-- Menu superior comienzo -->
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-dark bg-dark" id="menuSuperior">
+      <div class="container-fluid">
+        <a
+          class="navbar navbar-brand"
+          href="https://argentinaprograma.inti.gob.ar/"
+          target="_blank"
+        >
+          <img
+            src="images/ArgentinaPrograma_Logo-40Alto.png"
+            alt="Logo Argentina Programa"
+            class="d-inline-block align-text-top"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0 navbar-right">
+            <!--me-auto-->
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Proyectos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contacto</a>
+            </li>
+
+            <li class="nav-item">
+              <button type="button" class="btn btn-primary">Login</button>
+            </li>
+
+            <!--
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">Disabled</a>
+              </li>
+            -->
+          </ul>
+
+          <!--
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+            -->
+        </div>
+      </div>
+    </nav>
+    <!--Fin del menu superior -->
+    <div class="card mat-card" id="first-card">
+      <div id="profile-background">
+        <img src="images/slide_02.jpg" />
+      </div>
+      <div id="info" class="ficha">
+        <div id="info-img">
+          <img class="profile-image" src="images/MiFotoCirculo.png" />
+          <div class="btn-edit btn-edit-foto">
+            <a href="#" class="btn-right" title="Modificar Foto de Perfil"><i class="fa fa-pen"></i></a>
+          </div>
+        </div>
+        <div class="limpiarFloat"></div>
+        <div id="info-data" class="kcol-xl-4">
+          <div>
+            <h1 class="tituloFicha">Leandro Quipildor</h1>
+            <div id="info-titulo">Programador | Profesor de Informática</div>
+            <div id="info-company">Desempleado</div>
+            <div id="info-contact">
+              <span>Buenos Aires (Argentina)</span>
+              <!--<span><a href="#">Información de contacto</a></span>-->
+            </div>
+          </div>
+          <div class="btn-edit btn-edit-info">
+            <a href="#" class="btn-right" title="Modificar mis Datos"><i class="fa fa-pen"></i></a>
+          </div>
+          <ul id="info-details" class="kcol-xl-8">
+            <li>
+              <a href="#">
+                <img src="" /><!--Logo del lugar de trabajo-->
+                <h2></h2>
+                <!--Nombre del lugar de trabajo-->
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img src="" /><!--Logo del lugar de trabajo-->
+                <h2></h2>
+                <!--Nombre del lugar de trabajo-->
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="info-actions" class="">
+          <button type="button" class="btn btn-primary">
+            Contactarme...
+          </button>
+          <button type="button" class="btn btn-light">Añadir sección</button>
+          <button type="button" class="btn btn-light">Más</button>
+        </div>
+      </div>
+    </div>
+<!-- Ficha Acerca de mi... -->
+    <div class="card mat-card" id="second-card">
+      <div id="fichaAcercaDeMi" class="ficha">
+        <h1 class="tituloFicha tituloAcercaDM">Acerca de mi...  </h1>
+<!--
+        <div class="btn-edit lapizALaDerecha" onclick="cambiar_parrafo()">
+          <a href="#" class="btn-right">
+            <i class="fa fa-pen"></i>
+          </a>
+        </div>
+-->
+<!--
+      </div>
+      <div>
+-->
+        <div id="contResumenAcercaDeMi">
+          <p id="text-acercaDeMi-1" class="text-acercaDeMi">
+            Entusiasta de la informática y profesor todavía sin ejercer.
+          </p>
+          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right" title="Modificar Resumen Sobre Mi...">
+              <i class="fa fa-pen"></i>
+            </a>
+          </div>
+        </div>
+
+        <div id="contParrafosAcercaDeMi" class="contParrafosAcercaDeMi" >
+          <div id="text-acercaDeMi-2" class="contIndividual-P">
+            <p id="" class="text-P-acercaDeMi">
+              Disfruto de programar, pero dentro de la programación tengo preferencia por el Backend,
+              me gusta esa sensación que se tiene al conseguir que funcione algo que después de varios intentos probando 
+              distintos códigos, aunque a veces puede ser frustrante tardar en conseguir esa solución.
+            </p>
+            <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Modificar Párrafo Sobre Mi...">
+                <i class="fa fa-pen"></i>
+              </a>
+            </div>
+            <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Eliminar Párrafo...">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </div>
+          </div>
+
+          <div id="" class="contIndividual-P">
+            <p id="" class="text-P-acercaDeMi">
+              Me recibí de Profesor de Informática hace poco y todavía no comencé a ejercer, estoy haciendo cursos 
+              para poder subir puntaje y empezar a realizar suplencias.
+            </p>
+            <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Modificar Párrafo Sobre Mi...">
+                <i class="fa fa-pen"></i>
+              </a>
+            </div>
+            <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Eliminar Párrafo...">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </div>
+          </div>
+          <div id="" class="contIndividual-P">
+            <p id="" class="text-P-acercaDeMi">
+              Otra cosa que disfruto, y comparto con mi novia, es viajar por mi pais (aunque también tengo ganas de conocer 
+              Brasil), y disfrutar de las comidas tradicionales de cada provincia o ciudad. 
+            </p>
+            <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Modificar Párrafo Sobre Mi...">
+                <i class="fa fa-pen"></i>
+              </a>
+            </div>
+            <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+              <a href="#" class="btn-right" title="Eliminar Párrafo...">
+                <i class="far fa-trash-alt"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+<!--
+      <div>
+        <input
+          id="edit-acercade"
+          type="text"
+          oninput="myFunction2(this.value)"
+          style="display: none"
+        />
+      </div>
+-->
+    </div>
+<!-- Ficha Experiencia Laboral -->
+    <div class="card mat-card" id="third-card">
+      <div id="fichaExpLaboral" class="ficha">
+        <h1 class="tituloFicha tituloExpLaboral">Experiencia laboral  <a href="#" class="btn-plus" title="Agregar Lugar de Trabajo" ><i class="fas fa-plus-circle"></i></a> </h1>
+<!--
+        <div id="contResumenExpLab">
+          <p id="text-acercaDeMi-1" class="text-acercaDeMi">
+            Entusiasta de la informática y profesor todavía sin ejercer.
+          </p>
+          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right" title="Modificar Resumen Sobre Mi...">
+              <i class="fa fa-pen"></i>
+            </a>
+          </div>
+        </div>
+-->
+
+        <div id="contBloquesExpLab" class="contBloquesExpLab" >
+          <div id="text-expLab-2" class="contIndividual-expLab">
+            <div class="contInfo-expLab grow1_ col-sm-9">
+              <h5 id="" class="nombreEmpresa-expLab">Ro-Dubi SRL (Magika)</h5>
+              <div class="fechas-expLab">2002 - 2018</div>
+              <div class="descripcion-expLab">
+                Trabajé como operario realizando tareas varias, especialmente de producción fabricando, armando 
+                y embalando distintos tipos de juguetes y carpetas.
+              </div>
+            </div>
+            <div class="contImg-expLab col-sm-2 centrar-h">
+              <img src="images/logo-magika-2.png" alt="Logo Magika" class="logoExpLab">
+            </div>
+            <div class="contBtn-expLab col-sm-1 centrar-h">
+              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Modificar Datos de Trabajo...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Eliminar Datos de Trabajo...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+<!--
+            <div class="contDer-expLab">
+
+            </div>
+          -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+<!-- Ficha Educación -->
+    <div class="card mat-card" id="fourth-card">
+      <div id="fichaEducacion" class="ficha">
+        <h1 class="tituloFicha tituloEducacion">Educación  <a href="#" class="btn-plus" title="Agregar Lugar de Educación/Título" ><i class="fas fa-plus-circle"></i></a> </h1>
+
+        <div id="contBloquesEducacion" class="contBloquesEducacion" >
+          <div id="text-educacion-2" class="contIndividual-educacion">
+            <div class="contInfo-educacion grow1_ col-sm-9">
+              <h5 id="" class="nombreInstituto-educacion">Profesorado del Consudec</h5>
+              <div class="fechas-educacion">2015 - 2019 (Completado)</div>
+              <div class="titulo-educacion">
+                <b>Título: </b> Profesor de Educación Secundaria en Informática
+              </div>
+            </div>
+            <div class="contImg-educacion col-sm-2 centrar-h">
+              <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+            </div>
+            <div class="contBtn-educacion col-sm-1 centrar-h">
+              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Modificar Datos Educativos...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="separador-educacion" />
+
+          <div id="text-educacion-2" class="contIndividual-educacion">
+            <div class="contInfo-educacion grow1_ col-sm-9">
+              <h5 id="" class="nombreInstituto-educacion">Universidad Nacional de La Matanza</h5>
+              <div class="fechas-educacion">2010 - 2016 (Completado)</div>
+              <div class="titulo-educacion">
+                <b>Título: </b> Técnico Universitario en Web
+              </div>
+            </div>
+            <div class="contImg-educacion col-sm-2 centrar-h">
+              <img src="images/logo-unlam.png" alt="logo UNLaM" class="logoInstitutoEduc">
+            </div>
+            <div class="contBtn-educacion col-sm-1 centrar-h">
+              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Modificar Datos Educativos...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+<!-- Ficha Skill's -->
+    <div class="card mat-card" id="fifth-card">
+      <div id="fichaEducacion" class="ficha">
+        <h1 class="tituloFicha tituloSkill">Habilidades / Conocimiento  <a href="#" class="btn-plus" title="Agregar Habilidad o Conocimiento" ><i class="fas fa-plus-circle"></i></a> </h1>
+        <!--<div id="contBloquesSkill" class="contBloquesSkill" >-->
+          
+<!--
+          <div id="text-skill-2" class="contIndividual-skill">
+
+            <div class="col-md-4 centrar-h">
+              <div class="progress yellow"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+                <div class="progress-value">
+                  37.5%
+                </div>
+              </div>
+
+              <div class="contBtn-educacion col-sm-1 centrar-h">
+                <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                  <a href="#" class="btn-right" title="Modificar Datos Educativos...">
+                    <i class="fa fa-pen"></i>
+                  </a>
+                </div>
+                <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                  <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
+                    <i class="far fa-trash-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="text-skill-2" class="contIndividual-skill">
+            <div class="col-md-4 centrar-h">
+              <div class="progress yellow"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+                <div class="progress-value">
+                  37.5%
+                </div>
+              </div>
+
+              <div class="contBtn-educacion col-sm-1 centrar-h">
+                <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                  <a href="#" class="btn-right" title="Modificar Datos Educativos...">
+                    <i class="fa fa-pen"></i>
+                  </a>
+                </div>
+                <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                  <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
+                    <i class="far fa-trash-alt"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+-->          
+
+<!-- Barras de progreso rectas -->
+          
+              <div id="contBloquesSkill" class="contBloquesSkill col-md-12">
+                <div class="contIndividual-skill row">
+                  <div class="contInd-skill-izq col-md-6">
+                    <h3 class="progress-title">HTML5 </h3>
+                    <div class="progress-outer">
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:90%;"></div>
+                        
+                        <div class="progress-value"><span>90</span>%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
+                    <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                      <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
+                        <i class="fa fa-pen"></i>
+                      </a>
+                    </div>
+                    <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                      <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                
+                <hr class="separadorSkill" />
+
+                <div class="contIndividual-skill row">
+                  <div class="contInd-skill-izq col-md-6">
+                    <h3 class="progress-title">PHP</h3>
+                    <div class="progress-outer">
+                      <div class="progress">
+                        <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:80%;"></div>
+                        
+                        <div class="progress-value"><span>80</span>%</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="contBtn-skill col-sm-2 centrar-h_ col-md-2">
+                    <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                      <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
+                        <i class="fa fa-pen"></i>
+                      </a>
+                    </div>
+                    <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                      <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
+                        <i class="far fa-trash-alt"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+           
+
+        <!--</div>-->
+    
+      </div>
+    </div>
+
+<!-- Ficha Proyectos -->
+    <div class="card mat-card" id="sixth-card">
+      <div id="fichaProyectos" class="ficha">
+        <h1 class="tituloFicha tituloProyectos">Mis Proyectos  <a href="#" class="btn-plus" title="Agregar Proyecto..." ><i class="fas fa-plus-circle"></i></a> </h1>
+
+        <div id="contBloquesProyectos" class="contBloquesProyectos" >
+
+
+          <div id="text-proyectos-2" class="contIndividual-proyecto">
+            <div class="contInfo-proyecto grow1_ col-sm-9_">
+              <h5 id="" class="nombreProyecto">Libreria Fenix (Escritorio) - <i class="fab fa-github"></i> </h5>
+              <div class="fecha-proyecto"><b>Año del proyecto: </b>2021 </div>
+              <div class="tecnologias-proyecto"><b><i>Java - MySQL </i></b></div>
+              <div class="descripcion-proyecto">
+                El proyecto es el trabajo final del curso "Trayecto de Programador", dictado por el CFP n°36 de Mataderos, 
+                el mismo consiste en una aplicación de escritorio de una libreria para manejar la carga de libros, clientes, 
+                etc y sus ventas.
+              </div>
+              <div class="contGaleria-proyecto">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+
+              </div>
+            </div>
+            
+            <div class="contBtn-proyectos col-sm-1 centrar-h">
+              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Modificar Proyecto...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Eliminar Proyecto...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <hr class="separador-proyecto" />
+
+          <div id="text-proyectos-2" class="contIndividual-proyecto">
+            <div class="contInfo-proyecto grow1_ col-sm-9_">
+              <h5 id="" class="nombreProyecto">Contactos On Fire (Web) - <i class="fab fa-github"></i> </h5>
+              <div class="fecha-proyecto"><b>Año del proyecto: </b>2019 </div>
+              <div class="tecnologias-proyecto"><b><i>HTML - CSS - PHP - MySQL </i></b></div>
+              <div class="descripcion-proyecto">
+                El proyecto es una página para conocer personas, la misma permite crearse un perfil y realizar 
+                busquedas de perfiles para ponerse en contacto.
+              </div>
+              <div class="contGaleria-proyecto">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+                <img src="images/logo-consudec.png" alt="logo Consudec" class="logoInstitutoEduc">
+
+              </div>
+            </div>
+            
+            <div class="contBtn-proyectos col-sm-1 centrar-h">
+              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Modificar Proyecto...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+                <a href="#" class="btn-right" title="Eliminar Proyecto...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+  
+
+
+
+
+        
+        </div>
+      </div>
+    </div>
+    
+        <!--<input type="file" id="file1" onChange="showFile(this)" />-->
+
+<!-- Pie de página -->
+    <div class="bottom section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <div class="copyright">
+              <p>© <span>2022</span> <a href="#" class="transition">Leandro Sebastian Quipildor</a> All rights reserved.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div><!-- Fin del contPP , está mal indentado  -->
+
 <router-outlet></router-outlet>
