@@ -12,6 +12,7 @@ import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExpLabComponent } from './componentes/exp-lab/exp-lab.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
     AcercaDeComponent,
     ExpLabComponent,
     EducacionComponent,
-    HabilidadesComponent
+    HabilidadesComponent,
+    ProyectosComponent
   ],
   imports: [
     BrowserModule,

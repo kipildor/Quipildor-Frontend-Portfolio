@@ -1,0 +1,50 @@
+
+.tituloEducacion {
+
+}
+
+.contBloquesProyectos {
+    margin-top: 0.5rem;
+}
+.contIndividual-proyecto {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.contInfo-proyecto {
+
+}
+.nombreProyecto {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fecha-proyecto {
+    font-style: italic;
+}
+.tecnologias-proyecto {
+
+}
+.descripcion-proyecto {
+
+}
+.contGaleria-proyecto {
+    padding-left: 1rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    */
+    text-align: center;
+}
+
+.contBtn-proyectos {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.separador-proyecto {
+    
+}
