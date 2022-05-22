@@ -1,0 +1,25 @@
+#menuSuperior {
+    float: absolute;
+    z-index: 2;
+}
+.navbar{
+    /*background-color: #000000;*/
+}
+.navbar-right{
+    margin-left: auto;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgba(255,255,255);
+    text-align: center;
+}
+.navbar-dark .navbar-nav .nav-item {
+    text-align: center;
+}
+.nav-link:hover {
+    color: rgba(255,255,255,.75);
+    background-color: rgba(255,100,100,.75);
+}
+.navbar-toggler-icon{
+    /*color: red;
+    background-color: blue;*/
+}
