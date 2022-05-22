@@ -13,6 +13,7 @@ import { ExpLabComponent } from './componentes/exp-lab/exp-lab.component';
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { PieComponent } from './componentes/pie/pie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     ExpLabComponent,
     EducacionComponent,
     HabilidadesComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    PieComponent
   ],
   imports: [
     BrowserModule,
