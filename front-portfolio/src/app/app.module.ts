@@ -7,10 +7,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
+import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
 @NgModule({
   declarations: [
     AppComponent,
-    EncabezadoComponent
+    EncabezadoComponent,
+    MisDatosComponent
   ],
   imports: [
     BrowserModule,
