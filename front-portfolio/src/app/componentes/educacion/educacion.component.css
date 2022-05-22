@@ -1,0 +1,58 @@
+/* Título de la sección "Experiencia Laboral"  */
+.tituloEducacion {
+}
+/*
+.text-educacion {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: inline;
+    float: left;
+}
+#text-educacion-1 {
+    font-style: italic;
+    font-weight:bold;
+    display: inline;
+}
+*/
+.contBloquesEducacion {
+    margin-top: 0.5rem;
+}
+.contIndividual-educacion {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.contInfo-educacion {
+
+}
+.nombreInstituto-educacion {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.fechas-educacion {
+    font-style: italic;
+}
+.titulo-educacion {
+
+}
+.contImg-educacion {
+    padding-left: 1rem;
+    /*
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    */
+    text-align: center;
+}
+.logoInstitutoEduc {
+    max-height: 5rem;
+    vertical-align: center;
+}
+.contBtn-educacion {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+

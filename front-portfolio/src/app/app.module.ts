@@ -10,13 +10,15 @@ import { EncabezadoComponent } from './componentes/encabezado/encabezado.compone
 import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 import { ExpLabComponent } from './componentes/exp-lab/exp-lab.component';
+import { EducacionComponent } from './componentes/educacion/educacion.component';
 @NgModule({
   declarations: [
     AppComponent,
     EncabezadoComponent,
     MisDatosComponent,
     AcercaDeComponent,
-    ExpLabComponent
+    ExpLabComponent,
+    EducacionComponent
   ],
   imports: [
     BrowserModule,
