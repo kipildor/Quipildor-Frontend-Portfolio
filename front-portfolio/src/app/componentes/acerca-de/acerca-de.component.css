@@ -1,0 +1,34 @@
+
+/* Título de la sección "Acerca de mi..."  */
+.tituloAcercaDM {
+}
+
+/* Resumen de la sección "Acerca de mi..."  */
+#contResumenAcercaDeMi {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.text-acercaDeMi {
+/*#contResumenAcercaDeMi {*/
+/*    padding-top: 1rem;*/
+    padding-bottom: 0;
+    margin-bottom: 0;
+    display: inline;
+    float: left;
+}
+#text-acercaDeMi-1 {
+    font-style: italic;
+    font-weight:bold;
+    display: inline;
+}
+.contParrafosAcercaDeMi {
+    margin-top: 1rem;
+}
+.contIndividual-P {
+    /*margin-top: 1rem;*/
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+

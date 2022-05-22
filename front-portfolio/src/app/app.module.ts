@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
+import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
 @NgModule({
   declarations: [
     AppComponent,
     EncabezadoComponent,
-    MisDatosComponent
+    MisDatosComponent,
+    AcercaDeComponent
   ],
   imports: [
     BrowserModule,
