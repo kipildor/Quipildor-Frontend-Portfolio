@@ -14,6 +14,8 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { PieComponent } from './componentes/pie/pie.component';
+import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/persona-by-id.component';
+import { PersonaService } from './servicios/persona.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,8 @@ import { PieComponent } from './componentes/pie/pie.component';
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    PieComponent
+    PieComponent,
+    PersonaByIdComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,7 @@ import { PieComponent } from './componentes/pie/pie.component';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

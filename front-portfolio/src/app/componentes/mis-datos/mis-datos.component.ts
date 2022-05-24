@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Persona } from 'src/app/modelos/persona';
+import { PersonaService } from 'src/app/servicios/persona.service';
+import { PersonaByIdComponent } from './persona-by-id/persona-by-id.component';
 
 @Component({
   selector: 'app-mis-datos',
@@ -7,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MisDatosComponent implements OnInit {
 
-  constructor() { }
+  public perso:Persona;
+  //public persoById:PersonaByIdComponent;
+
+  constructor(private servi:PersonaService, private router:Router) { }
+  
 
   ngOnInit(): void {
+    this.servi.mostrarPersona().subscribe(data=>{this.perso=data;})
   }
 
 }

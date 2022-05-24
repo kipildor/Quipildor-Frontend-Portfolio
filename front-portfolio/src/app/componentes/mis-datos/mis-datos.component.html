@@ -1,10 +1,12 @@
 <div class="card mat-card" id="first-card">
   <div id="profile-background">
-    <img src="./assets/img/slide_02.jpg" />
+    <!--<img src="./assets/img/slide_02.jpg" />-->
+    <img src="{{perso.urlBanner}}" />
   </div>
   <div id="info" class="ficha">
     <div id="info-img">
-      <img class="profile-image" src="./assets/img/MiFotoCirculo.png" />
+      <!--<img class="profile-image" src="./assets/img/MiFotoCirculo.png" />-->
+      <img class="profile-image" src="{{perso.urlFoto}}" />
       <div class="btn-edit btn-edit-foto">
         <a href="#" class="btn-right" title="Modificar Foto de Perfil"
           ><i class="fa fa-pen"></i
@@ -14,11 +16,11 @@
     <div class="limpiarFloat"></div>
     <div id="info-data" class="kcol-xl-4">
       <div>
-        <h1 class="tituloFicha">Leandro Quipildor</h1>
-        <div id="info-titulo">Programador | Profesor de Informática</div>
-        <div id="info-company">Desempleado</div>
+        <h1 class="tituloFicha">{{perso.nombre}} {{perso.apellido}}</h1>
+        <div id="info-titulo">{{perso.titProfesional}}</div>
+        <div id="info-company">{{perso.actividadActual}}</div>
         <div id="info-contact">
-          <span>Buenos Aires (Argentina)</span>
+          <span>{{perso.ubicacion}}</span>
           <!--<span><a href="#">Información de contacto</a></span>-->
         </div>
       </div>
@@ -34,5 +36,6 @@
       <button type="button" class="btn btn-light">Añadir sección</button>
       <button type="button" class="btn btn-light">Más</button>
     </div>
+    
   </div>
 </div>
