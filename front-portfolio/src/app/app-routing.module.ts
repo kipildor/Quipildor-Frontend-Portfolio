@@ -4,8 +4,10 @@ import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/pers
 import { Persona } from './modelos/persona';
 
 const routes: Routes = [
-  {path:'ver_persona', component:PersonaByIdComponent}
-
+  /*
+  { path:'ver_persona', component:PersonaByIdComponent },
+  { path:''}
+  */
 ];
 
 @NgModule({

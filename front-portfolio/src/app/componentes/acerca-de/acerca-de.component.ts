@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AcercaDe } from 'src/app/modelos/acerca-de';
+import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -7,9 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaDeComponent implements OnInit {
 
-  constructor() { }
+  public acerca:AcercaDe[]=[];
+
+  constructor(private router:Router, private serviAcerca:AcercaDeService) { }
 
   ngOnInit(): void {
+    this.serviAcerca.listarParrafos().subscribe(data=>{this.acerca=data});
   }
 
 }
