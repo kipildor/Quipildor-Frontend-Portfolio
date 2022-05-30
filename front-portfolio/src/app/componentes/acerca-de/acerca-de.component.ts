@@ -11,11 +11,14 @@ import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 export class AcercaDeComponent implements OnInit {
 
   public acerca:AcercaDe[]=[];
+  //public cant_parrafos:number=this.acerca.length;
+  //public primer_parrafo:String;
 
   constructor(private router:Router, private serviAcerca:AcercaDeService) { }
 
   ngOnInit(): void {
     this.serviAcerca.listarParrafos().subscribe(data=>{this.acerca=data});
+
   }
 
 }
