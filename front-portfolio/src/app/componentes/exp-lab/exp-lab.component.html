@@ -7,34 +7,24 @@
         ><i class="fas fa-plus-circle"></i
       ></a>
     </h1>
-    <!--
-      <div id="contResumenExpLab">
-        <p id="text-acercaDeMi-1" class="text-acercaDeMi">
-          Entusiasta de la informática y profesor todavía sin ejercer.
-        </p>
-        <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-          <a href="#" class="btn-right" title="Modificar Resumen Sobre Mi...">
-            <i class="fa fa-pen"></i>
-          </a>
-        </div>
-      </div>
--->
+   <!-- {{ listaExp | json }}-->
 
-    <div id="contBloquesExpLab" class="contBloquesExpLab">
+    <div *ngFor="let exp of listaExp; let i = index" id="contBloquesExpLab" class="contBloquesExpLab" >
+
       <div id="text-expLab-2" class="contIndividual-expLab">
         <div class="contInfo-expLab grow1_ col-sm-9">
-          <h5 id="" class="nombreEmpresa-expLab">Ro-Dubi SRL (Magika)</h5>
-          <div class="fechas-expLab">2002 - 2018</div>
+          <h5 id="" class="nombreEmpresa-expLab">{{ exp.nombreEmp }}</h5>
+          <div class="fechas-expLab">{{ exp.fechaIng }} - <span *ngIf="exp.fechaSalida;else todavia">{{ exp.fechaSalida }}</span>
+            <ng-template #todavia>Hasta el momento...</ng-template>
+          </div>
           <div class="descripcion-expLab">
-            Trabajé como operario realizando tareas varias, especialmente de
-            producción fabricando, armando y embalando distintos tipos de
-            juguetes y carpetas.
+            {{ exp.descripcion }}
           </div>
         </div>
         <div class="contImg-expLab col-sm-2 centrar-h">
           <img
-            src="./assets/img/logo-magika-2.png"
-            alt="Logo Magika"
+            src="{{ exp.urlLogo }}"
+            alt="Logo {{ exp.nombreEmp }}"
             class="logoExpLab"
           />
         </div>
@@ -50,12 +40,9 @@
             </a>
           </div>
         </div>
-        <!--
-          <div class="contDer-expLab">
 
-          </div>
-        -->
       </div>
+
     </div>
   </div>
 </div>
