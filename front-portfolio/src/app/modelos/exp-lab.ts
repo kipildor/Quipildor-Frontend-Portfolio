@@ -1,22 +1,22 @@
 export class ExpLab {
 
     idExp?:number;
-    
+
     nombreEmp:string;
-    
-    fechaIng:Date;
-    
-    fechaSalida:Date;
-    
+
+    fechaIng:number;
+
+    fechaSalida:number;
+
     descripcion:string;
-    
+
     urlLogo:string;
 
     // FK
     persona_id : number;
 
     //Constructores
-    constructor(idExp:number, nombreEmp:string, fechaIng:Date, fechaSalida:Date, descripcion:string, urlLogo:string,
+    constructor(idExp:number, nombreEmp:string, fechaIng:number, fechaSalida:number, descripcion:string, urlLogo:string,
                 persona_id : number) {
         this.idExp = idExp;
         this.nombreEmp = nombreEmp;

@@ -1,13 +1,13 @@
 export class Proyecto {
 
     idProyecto?:number;
-    
+
     nombreProy:string;
-    
-    fechaProy:Date;
-    
+
+    fechaProy:number;
+
     descripcion:string;
-    
+
     urlGithub:string;
 
     urlPropia:string;
@@ -16,7 +16,7 @@ export class Proyecto {
     persona_id : number;
 
     //Constructores
-    constructor(idProyecto:number, nombreProy:string, fechaProy:Date, descripcion:string, urlGithub:string, urlPropia:string,
+    constructor(idProyecto:number, nombreProy:string, fechaProy:number, descripcion:string, urlGithub:string, urlPropia:string,
                 persona_id : number) {
     this.idProyecto = idProyecto;
     this.nombreProy = nombreProy;
@@ -27,5 +27,5 @@ export class Proyecto {
 
     this.persona_id = persona_id;
     }
-    
+
 }

@@ -1,8 +1,62 @@
 <!-- Ficha Educación -->
 <div class="card mat-card" id="fourth-card">
-    <div id="fichaEducacion" class="ficha">
-      <h1 class="tituloFicha tituloEducacion">Educación  <a href="#" class="btn-plus" title="Agregar Lugar de Educación/Título" ><i class="fas fa-plus-circle"></i></a> </h1>
+  <div id="fichaEducacion" class="ficha">
+    <h1 class="tituloFicha tituloEducacion">
+      Educación
+      <a href="#" class="btn-plus" title="Agregar Lugar de Educación/Título"
+        ><i class="fas fa-plus-circle"></i
+      ></a>
+    </h1>
 
+    {{ listaEducacion | json }}
+
+
+    <div id="contBloquesEducacion" class="contBloquesEducacion" *ngFor="let instituto of listaEducacion; let i = index">
+      <button type="button" class="btn btn-warning">   </button>
+      <span *ngIf="i > 0"><hr class="separador-educacion" /></span>
+
+      <div id="text-educacion-2" class="contIndividual-educacion">
+        <div class="contInfo-educacion grow1_ col-sm-9">
+          <h5 id="" class="nombreInstituto-educacion">
+            {{ instituto.nombreInstit }}
+          </h5>
+          <div class="fechas-educacion">{{ instituto.fechaInicio}} - <span *ngIf="instituto.fechaFin;else todavia">{{ instituto.fechaFin }}  </span>
+            <ng-template #todavia>Hasta el momento...  </ng-template>
+
+          </div>
+          <div class="titulo-educacion">
+            <b>Título: </b> {{ instituto.titulo }}
+          </div>
+        </div>
+        <div class="contImg-educacion col-sm-2 centrar-h">
+          <img
+            src="{{ instituto.urlLogo }}"
+            alt="logo {{ instituto.nombreInstit }}"
+            class="logoInstitutoEduc"
+          />
+        </div>
+        <div class="contBtn-educacion col-sm-1 centrar-h">
+          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right" title="Modificar Datos Educativos...">
+              <i class="fa fa-pen"></i>
+            </a>
+          </div>
+          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+            <a
+              href="#"
+              class="btn-right"
+              title="Eliminar Datos de Educación..."
+            >
+              <i class="far fa-trash-alt"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+<!--      <hr class="separador-educacion" />-->
+    </div>
+
+    <!--
       <div id="contBloquesEducacion" class="contBloquesEducacion" >
         <div id="text-educacion-2" class="contIndividual-educacion">
           <div class="contInfo-educacion grow1_ col-sm-9">
@@ -57,7 +111,6 @@
         </div>
 
       </div>
-
-    </div>
-
+-->
   </div>
+</div>
