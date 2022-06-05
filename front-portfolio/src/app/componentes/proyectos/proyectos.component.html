@@ -15,7 +15,8 @@
       <div id="text-proyectos-2" class="contIndividual-proyecto">
         <div class="contInfo-proyecto grow1_ col-sm-9_">
           <h5 id="" class="nombreProyecto">
-            {{ proyecto.nombreProy }} - <i class="fab fa-github"></i>
+            {{ proyecto.nombreProy }} <span *ngIf="!urlVacia(proyecto.urlGithub)">- <a href="{{ proyecto.urlGithub }}"><i class="fab fa-github iconos1"></i></a></span>
+            <span *ngIf="!urlVacia(proyecto.urlPropia)">- <a href="{{ proyecto.urlPropia }}"><i class="fa-solid fa-globe iconos1"></i></a></span>
           </h5>
           <div class="fecha-proyecto"><b>Año del proyecto: </b>{{ proyecto.fechaProy }}</div>
           <div class="tecnologias-proyecto">

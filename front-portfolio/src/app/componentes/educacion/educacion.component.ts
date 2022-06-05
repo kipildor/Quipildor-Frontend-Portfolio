@@ -24,12 +24,11 @@ export class EducacionComponent implements OnInit {
   }
 
   variableNula(variable):boolean {
-    if( variable == null || variable == undefined || variable == "null" || variable == "undefined") {
-      return false
+    if( variable == null || variable == undefined || variable == "null" || variable == "undefined" || variable == "") {
+      return true;
     } else {
-        return true
+        return false;
       }
-
   }
 
 }

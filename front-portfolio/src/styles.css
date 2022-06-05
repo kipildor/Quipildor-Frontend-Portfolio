@@ -12,12 +12,12 @@ body{
     display: flex;
     */
     background-color: blueviolet;
-    
+
 }
 
 .contPP{
     background-color: aqua;
-    
+
 }
 /* Banner junto a la ficha de Acerca de mi */
 .mat-card {
@@ -49,6 +49,10 @@ body{
     float: left;
 }
 
+.iconos1 {
+  color: black;
+}
+
 /*
 ul.items-list {
     list-style: none inside;
@@ -69,7 +73,7 @@ ul.items-list li div.data-container a {
     /*float: left;*/
     /*padding-top: 1rem;*/
     padding-left: 1rem;
-    
+
 }
 .btn-delete {
     /*float: left;*/

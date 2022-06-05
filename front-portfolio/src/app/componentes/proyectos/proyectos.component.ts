@@ -18,4 +18,12 @@ export class ProyectosComponent implements OnInit {
     this.serviProy.listarProyectos().subscribe(response=>this.listaProyectos=response);
   }
 
+  urlVacia(urlBDD):boolean {
+    if( urlBDD == null || urlBDD == undefined || urlBDD == "null" || urlBDD == "undefined" || urlBDD == "") {
+      return true;
+    } else {
+        return false;
+      }
+  }
+
 }

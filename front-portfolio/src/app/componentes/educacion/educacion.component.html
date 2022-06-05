@@ -25,7 +25,7 @@
           </h5>
           <div class="fechas-educacion">
             {{ instituto.fechaInicio }} -
-            <span *ngIf="!variableNula(instituto.fechaFin) || instituto.fechaFin > instituto.fechaInicio;else todavia">
+            <span *ngIf="!variableNula(instituto.fechaFin) && instituto.fechaFin > instituto.fechaInicio;else todavia">
               {{ instituto.fechaFin }} *** <b>{{ instituto.estado.descripcion }}</b>
             </span>
             <ng-template #todavia>
