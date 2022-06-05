@@ -1,7 +1,8 @@
 import { Estado } from './estado';
+import { Persona } from './persona';
 
 export class Educacion {
-  idEduc?: number;
+  idEduc: number;
 
   nombreInstit: string;
 
@@ -14,13 +15,13 @@ export class Educacion {
   urlLogo: string;
 
   // FK
-  persona_id: number;
+  perso: Persona;
 
-  estado_id: Estado;
+  estado: Estado;
 
   //Constructores
   constructor(idEduc: number, nombreInstit: string, fechaInicio: number, fechaFin: number, titulo: string, urlLogo: string,
-              persona_id: number, estado_id: Estado ) {
+              perso: Persona, estado: Estado ) {
     this.idEduc = idEduc;
     this.nombreInstit = nombreInstit;
     this.fechaInicio = fechaInicio;
@@ -28,8 +29,8 @@ export class Educacion {
     this.titulo = titulo;
     this.urlLogo = urlLogo;
 
-    this.persona_id = persona_id;
-    this.estado_id = estado_id;
+    this.perso = perso;
+    this.estado = estado;
   }
 
   /*

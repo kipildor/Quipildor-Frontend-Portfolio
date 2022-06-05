@@ -8,11 +8,14 @@
       ></a>
     </h1>
 
-    {{ listaEducacion | json }}
+    <!--{{ listaEducacion | json }}-->
 
-
-    <div id="contBloquesEducacion" class="contBloquesEducacion" *ngFor="let instituto of listaEducacion; let i = index">
-      <button type="button" class="btn btn-warning">   </button>
+    <div
+      id="contBloquesEducacion"
+      class="contBloquesEducacion"
+      *ngFor="let instituto of listaEducacion; let i = index"
+    >
+      <!--<button type="button" class="btn btn-warning" >  </button> -->
       <span *ngIf="i > 0"><hr class="separador-educacion" /></span>
 
       <div id="text-educacion-2" class="contIndividual-educacion">
@@ -20,10 +23,16 @@
           <h5 id="" class="nombreInstituto-educacion">
             {{ instituto.nombreInstit }}
           </h5>
-          <div class="fechas-educacion">{{ instituto.fechaInicio}} - <span *ngIf="instituto.fechaFin;else todavia">{{ instituto.fechaFin }}  </span>
-            <ng-template #todavia>Hasta el momento...  </ng-template>
-
+          <div class="fechas-educacion">
+            {{ instituto.fechaInicio }} -
+            <span *ngIf="!variableNula(instituto.fechaFin) || instituto.fechaFin > instituto.fechaInicio;else todavia">
+              {{ instituto.fechaFin }} *** <b>{{ instituto.estado.descripcion }}</b>
+            </span>
+            <ng-template #todavia>
+              Hasta el momento...  *** <b>{{ instituto.estado.descripcion }}</b>
+            </ng-template>
           </div>
+
           <div class="titulo-educacion">
             <b>Título: </b> {{ instituto.titulo }}
           </div>
@@ -53,7 +62,7 @@
         </div>
       </div>
 
-<!--      <hr class="separador-educacion" />-->
+      <!--      <hr class="separador-educacion" />-->
     </div>
 
     <!--
