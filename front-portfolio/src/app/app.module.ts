@@ -17,6 +17,8 @@ import { PieComponent } from './componentes/pie/pie.component';
 import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/persona-by-id.component';
 import { PersonaService } from './servicios/persona.service';
 import { LoginComponent } from './componentes/formularios/login.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,7 +39,8 @@ import { LoginComponent } from './componentes/formularios/login.component';
     FontAwesomeModule,
     //FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgbModule
   ],
   providers: [PersonaService],
   bootstrap: [AppComponent]
