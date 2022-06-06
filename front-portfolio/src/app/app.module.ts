@@ -16,6 +16,7 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PieComponent } from './componentes/pie/pie.component';
 import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/persona-by-id.component';
 import { PersonaService } from './servicios/persona.service';
+import { LoginComponent } from './componentes/formularios/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +28,8 @@ import { PersonaService } from './servicios/persona.service';
     HabilidadesComponent,
     ProyectosComponent,
     PieComponent,
-    PersonaByIdComponent
+    PersonaByIdComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
