@@ -18,6 +18,7 @@ import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/pers
 import { PersonaService } from './servicios/persona.service';
 import { LoginComponent } from './componentes/formularios/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/form-mis-datos.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ProyectosComponent,
     PieComponent,
     PersonaByIdComponent,
-    LoginComponent
+    LoginComponent,
+    FormMisDatosComponent
   ],
   imports: [
     BrowserModule,

@@ -24,18 +24,24 @@
           <!--<span><a href="#">Información de contacto</a></span>-->
         </div>
       </div>
-      <div class="btn-edit btn-edit-info">
+      <div class="btn-edit btn-edit-info" (click)="open(content)">
         <a href="#" class="btn-right" title="Modificar mis Datos"
           ><i class="fa fa-pen"></i
         ></a>
       </div>
-      
+
     </div>
     <div id="info-actions" class="">
       <button type="button" class="btn btn-primary">Contactarme...</button>
       <button type="button" class="btn btn-light">Añadir sección</button>
       <button type="button" class="btn btn-light">Más</button>
     </div>
-    
+
   </div>
 </div>
+
+<ng-template #content let-modal>
+
+  <app-form-mis-datos></app-form-mis-datos>
+
+</ng-template>
