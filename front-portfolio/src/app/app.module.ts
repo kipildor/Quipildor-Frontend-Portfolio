@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EncabezadoComponent } from './componentes/encabezado/encabezado.component';
 import { MisDatosComponent } from './componentes/mis-datos/mis-datos.component';
 import { AcercaDeComponent } from './componentes/acerca-de/acerca-de.component';
@@ -37,7 +37,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    //FormsModule,
+    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule

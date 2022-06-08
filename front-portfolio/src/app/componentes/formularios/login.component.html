@@ -1,48 +1,18 @@
-<div class="row justify-content-center ">
-  <div class="col-md-7 col-lg-5">
-    <div class="wrap">
-      <div class="img" style="background-image: url(./assets/img/iniciar-sesion.jpg);"></div>
-      <div class="login-wrap p-4 p-md-5">
-        <div class="d-flex">
-          <div class="w-100">
-            <h3 class="mb-4">Login</h3>
-          </div>
-          <div class="w-100">
-            <p class="social-media d-flex justify-content-end">
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
-              <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
-            </p>
-          </div>
-        </div>
-        <form action="#" class="signin-form">
-          <div class="form-group mt-3">
-            <input type="text" class="form-control" required>
-            <label class="form-control-placeholder" for="username">E-mail</label>
-          </div>
-          <div class="form-group">
-            <input id="password-field" type="password" class="form-control" required>
-            <label class="form-control-placeholder" for="password">Contraseña</label>
-            <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
-          </div>
-          <div class="form-group">
-            <button type="submit" class="form-control btn btn-primary rounded submit px-3">Entrar</button>
-          </div>
-          <div class="form-group d-md-flex">
-            <!--
-            <div class="w-50 text-left">
-              <label class="checkbox-wrap checkbox-primary mb-0">Remember Me
-              <input type="checkbox" checked>
-              <span class="checkmark"></span>
-              </label>
-            </div>
-            -->
-            <div class="w-50 text-md-right">
-              <a href="#">¿Olvidó su contraseña?</a>
-            </div>
-          </div>
-        </form>
-        <!--<p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p>-->
-      </div>
+
+<div class="contenedor" >
+  <form action="" class="form" >
+    <div class="form-header">
+      <h1 class="form-title">Login</h1>
     </div>
-  </div>
+
+    <label for="email" class="form-label">Email:</label>
+    <input type="text" id="email" class="form-input" placeholder="Ingrese su E-mail">
+
+    <label for="password" class="form-label">Contraseña:</label>
+    <input type="password" id="password" class="form-input" placeholder="Ingrese su Contraseña">
+
+    <input type="submit" class="btn-submit" value="Ingresar">
+
+
+  </form>
 </div>

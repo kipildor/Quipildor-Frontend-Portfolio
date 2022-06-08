@@ -23,3 +23,11 @@
     /*color: red;
     background-color: blue;*/
 }
+
+/**********************************/
+.modal-content {
+  background-color: transparent !important;
+}
+.modal-content-bg {
+  background-color: transparent !important;
+}

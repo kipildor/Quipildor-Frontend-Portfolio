@@ -37,25 +37,11 @@
           </li>
 
           <li class="nav-item">
-            <button type="button" class="btn btn-primary">Login</button>
+            <button type="button" class="btn btn-primary" (click)="modalServ.open(formLogin)">Login</button>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              test modal
+            </button>
           </li>
-
-          <!--
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled">Disabled</a>
-            </li>
-          -->
         </ul>
 
         <!--
@@ -68,5 +54,9 @@
     </div>
   </nav>
   <!--Fin del menu superior -->
-
-  <app-login></app-login>
+  <!-- Vertically centered modal -->
+  <!--<div class="" *ngIf="modalSwitch == true" >-->
+  <ng-template #formLogin let-modal>
+    <app-login></app-login>
+  </ng-template>
+  <!--</div>-->
