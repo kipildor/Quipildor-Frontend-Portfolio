@@ -37,10 +37,11 @@
           </li>
 
           <li class="nav-item">
-            <button type="button" class="btn btn-primary" (click)="modalServ.open(formLogin)">Login</button>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button type="button" class="btn btn-primary" (click)="open(content)">Login</button>
+            <!--<button type="button" class="btn btn-primary" (click)="modalServ.open(formLogin)">Login</button>-->
+            <!--<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
               test modal
-            </button>
+            </button>-->
           </li>
         </ul>
 
@@ -56,7 +57,14 @@
   <!--Fin del menu superior -->
   <!-- Vertically centered modal -->
   <!--<div class="" *ngIf="modalSwitch == true" >-->
+  <!--
   <ng-template #formLogin let-modal class="transp">
     <app-login></app-login>
+  </ng-template>
+  -->
+  <ng-template #content let-modal>
+
+    <app-login></app-login>
+
   </ng-template>
   <!--</div>-->
