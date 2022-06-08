@@ -22,4 +22,5 @@ export class EncabezadoComponent implements OnInit {
     this.modalSwitch = true;
   }
 
+
 }

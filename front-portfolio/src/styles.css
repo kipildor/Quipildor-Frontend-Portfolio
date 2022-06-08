@@ -119,3 +119,26 @@ ul.items-list li div.data-container a {
 .limpiarFloat {
     clear: both;
 }
+
+.modal-content {
+  background: none;
+  background-color: transparent;
+  border: 0px;
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow-y: auto;
+}
+
+.modal.show  {
+  /*
+  display:flex!important;
+  flex-direction:column;
+  justify-content:center;
+  align-content:center;
+  align-items: flex-start;
+  */
+}

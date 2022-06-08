@@ -1,8 +1,9 @@
 * {
   margin: 0;
   padding : 0;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
+  /*-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;*/
+  background-color: transparent;
 }
 /*
 body {
@@ -12,6 +13,12 @@ body {
   background-attachment: fixed;
 }
 */
+
+.contenedor {
+  border-radius: 20px;
+
+  vertical-align: middle;
+}
 
 .contenedor .form .form-header .form-title {
   font-weight: normal;
@@ -28,13 +35,14 @@ body {
 
 .contenedor .form {
   background: rgba(0,0,0,.6);
-  width: 90%;
+  width: 100%;
   max-width: 500px;
   margin: auto;
   padding: 5px 35px;
   margin-top: 30px;
   padding-bottom: 30px;
-  border-radius: 3px;
+  border-radius: 20px;
+  /*background-color: transparent;*/
 }
 
 .contenedor .form .form-label {
@@ -84,3 +92,15 @@ body {
 }
 
 /**********************************/
+
+
+
+.transp {
+  background-color: rgba(0,0,0,.5) !important;
+  vertical-align: bottom;
+
+}
+
+.modal-dialog {
+
+}
