@@ -25,13 +25,31 @@ body {
   font-family: sans-serif;
   color: #ff851b;
   text-align: center;
-  padding: 14px 0;
+  /*padding: 14px 0;*/
+  padding-bottom: 14px;
 }
 /*
 .contenedor .form .form-header .form-title span {
   color: #fff;
 }
 */
+
+.barraSup {
+  width: 100%;
+  /*padding-right: 10px;*/
+  text-align: right;
+}
+
+.btn-cierre {
+  color: red;
+  font-size: 2em;
+}
+
+.btn-cierre :hover {
+  color: darkred;
+  cursor: pointer;
+  /*font-size: 2em;*/
+}
 
 .contenedor .form {
   background: rgba(0,0,0,.3);

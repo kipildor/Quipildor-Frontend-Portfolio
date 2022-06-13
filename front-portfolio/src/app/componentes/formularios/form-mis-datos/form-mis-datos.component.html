@@ -1,29 +1,34 @@
 <div class="contenedor transp" >
   <form action="" class="form" >
     <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
       <h1 class="form-title">Mis Datos</h1>
     </div>
 
     <label for="nombre" class="form-label">Nombre:</label>
-    <input type="text" id="nombre" class="form-input" placeholder="Ingrese su Nombre">
+    <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ingrese su Nombre" value="{{perso.nombre}}" [(ngModel)]="perso.nombre">
 
     <label for="apellido" class="form-label">Apellido:</label>
-    <input type="text" id="apellido" class="form-input" placeholder="Ingrese su Apellido">
+    <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Ingrese su Apellido" value="{{perso.apellido}}" [(ngModel)]="perso.apellido">
 <!--
     <label for="fecha-nac" class="form-label">Fecha de nacimiento:</label>
     <input type="text" id="fecha-nac" class="form-input" placeholder="Ingrese la Fecha de su nacimiento">
 -->
     <label for="ubicacion" class="form-label">Ubicación:</label>
-    <input type="text" id="ubicacion" class="form-input" placeholder="Ingrese de donde es">
+    <input type="text" id="ubicacion" name="ubicacion" class="form-input" placeholder="Ingrese de donde es" value="{{perso.ubicacion}}" [(ngModel)]="perso.ubicacion">
 
     <label for="titulo" class="form-label">Título:</label>
-    <input type="text" id="titulo" class="form-input" placeholder="Ingrese un título para usted">
+    <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Ingrese un título para usted" value="{{perso.titProfesional}}" [(ngModel)]="perso.titProfesional">
 
     <label for="actividad" class="form-label">Actividad Actual:</label>
-    <input type="text" id="actividad" class="form-input" placeholder="Ingrese su Actividad Actual">
+    <input type="text" id="actividad" name="actividad" class="form-input" placeholder="Ingrese su Actividad Actual" value="{{perso.actividadActual}}" [(ngModel)]="perso.actividadActual">
+
+    <input type="hidden" id="id-persona" name="id-persona" class="form-input" value="{{perso.id}}" [(ngModel)]="perso.id">
 
 
-    <input type="submit" class="btn-submit" value="Guardar">
+    <input type="submit" class="btn-submit" value="Guardar" (click)="actualizar_persona()">
 
 
   </form>

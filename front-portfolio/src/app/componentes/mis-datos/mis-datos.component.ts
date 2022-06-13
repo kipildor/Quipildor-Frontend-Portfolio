@@ -4,6 +4,7 @@ import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Persona } from 'src/app/modelos/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 import { PersonaByIdComponent } from './persona-by-id/persona-by-id.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-mis-datos',
@@ -20,7 +21,7 @@ export class MisDatosComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.servi.mostrarPersona().subscribe(data=>{this.perso=data;})
+    this.servi.mostrarPersona(1).subscribe(data=>{this.perso=data;})
   }
 
   open(content) {
@@ -31,7 +32,7 @@ export class MisDatosComponent implements OnInit {
     });
   }
 
-  private getDismissReason(reason: any): string {
+  public getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
     } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
@@ -39,6 +40,10 @@ export class MisDatosComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  public recargarComponente():void {
+    this.ngOnInit();
   }
 
 }

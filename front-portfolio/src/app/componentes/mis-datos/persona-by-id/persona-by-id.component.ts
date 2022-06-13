@@ -15,7 +15,7 @@ export class PersonaByIdComponent implements OnInit {
   constructor(private servi:PersonaService, private router:Router) { }
 
   ngOnInit(): void {
-    this.servi.mostrarPersona().subscribe(data=>{this.perso=data;})
+    //this.servi.mostrarPersona(1).subscribe(data=>{this.perso=data;})
   }
 
 }

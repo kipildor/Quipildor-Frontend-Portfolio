@@ -20,6 +20,7 @@ import { LoginComponent } from './componentes/formularios/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/form-mis-datos.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

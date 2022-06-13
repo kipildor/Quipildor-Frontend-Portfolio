@@ -1,12 +1,12 @@
 <div class="card mat-card" id="first-card">
   <div id="profile-background">
     <!--<img src="./assets/img/slide_02.jpg" />-->
-    <img src="{{perso.urlBanner}}" />
+    <img src="{{ perso.urlBanner }}" />
   </div>
   <div id="info" class="ficha">
     <div id="info-img">
       <!--<img class="profile-image" src="./assets/img/MiFotoCirculo.png" />-->
-      <img class="profile-image" src="{{perso.urlFoto}}" />
+      <img class="profile-image" src="{{ perso.urlFoto }}" />
       <div class="btn-edit btn-edit-foto">
         <a href="#" class="btn-right" title="Modificar Foto de Perfil"
           ><i class="fa fa-pen"></i
@@ -32,9 +32,9 @@
 
     </div>
     <div id="info-actions" class="">
-      <button type="button" class="btn btn-primary">Contactarme...</button>
+      <button type="button" class="btn btn-primary" (click)="ngOnInit()">Contactarme...</button>
       <button type="button" class="btn btn-light">Añadir sección</button>
-      <button type="button" class="btn btn-light">Más</button>
+      <button type="button" class="btn btn-light" >Más</button>
     </div>
 
   </div>

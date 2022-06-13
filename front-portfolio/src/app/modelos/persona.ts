@@ -3,28 +3,28 @@ export class Persona {
     id? : number;
 
     nombre : string;
-    
+
     apellido : string;
-    
+
     fechaNac : Date;
-    
+
     email : string;
-    
+
     urlFoto : string;
 
     urlBanner : string;
-    
+
     password? : string;
-    
+
     ubicacion : string;
-    
+
     titProfesional : string;
-    
+
     actividadActual : string;
 
     //Constructores
-    constructor(id:number, nombre:string, apellido:string, fechaNac:Date, email:string, 
-                urlFoto:string, urlBanner:string, password:string, ubicacion:string, 
+    constructor(id:number, nombre:string, apellido:string, fechaNac:Date, email:string,
+                urlFoto:string, urlBanner:string, password:string, ubicacion:string,
                 titProfesional:string, actividadActual:string) {
         this.id = id;
         this.nombre = nombre;
@@ -38,9 +38,11 @@ export class Persona {
         this.titProfesional = titProfesional;
         this.actividadActual = actividadActual;
     }
+
+    //constructor() {}
 /*
-    constructor(nombre:string, apellido:string, fechaNac:Date, email:string, 
-                urlFoto:string, urlBanner:string, password:string, ubicacion:string, 
+    constructor(nombre:string, apellido:string, fechaNac:Date, email:string,
+                urlFoto:string, urlBanner:string, password:string, ubicacion:string,
                 titProfesional:string, actividadActual:string) {
         this.nombre = nombre;
         this.apellido = apellido;
