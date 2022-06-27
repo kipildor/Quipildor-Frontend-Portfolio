@@ -13,6 +13,6 @@ export class ExpLabService {
   constructor(private http:HttpClient) { }
 
   public listarExperiencias():Observable<ExpLab[]> {
-    return this.http.get<ExpLab[]>(this.expLabURL);
+    return this.http.get<ExpLab[]>(this.expLabURL+`/invitado`);
   }
 }

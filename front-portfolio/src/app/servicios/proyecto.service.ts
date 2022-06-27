@@ -14,7 +14,7 @@ export class ProyectoService {
   constructor(private http:HttpClient) { }
 
   public listarProyectos():Observable<Proyecto[]> {
-    return this.http.get<Proyecto[]>(this.proyectoURL);
+    return this.http.get<Proyecto[]>(this.proyectoURL+`/invitado`);
 
   }
 

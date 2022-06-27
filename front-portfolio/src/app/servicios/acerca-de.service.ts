@@ -14,7 +14,7 @@ export class AcercaDeService {
 
   public listarParrafos():Observable<AcercaDe[]> {
 
-    return this.http.get<AcercaDe[]>(this.acercaDeURL);
+    return this.http.get<AcercaDe[]>(this.acercaDeURL+`/invitado`);
 
   }
 }

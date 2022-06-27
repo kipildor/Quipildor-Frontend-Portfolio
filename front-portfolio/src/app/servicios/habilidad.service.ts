@@ -13,7 +13,7 @@ export class HabilidadService {
   constructor(private http:HttpClient) { }
 
   public listarHabilidades():Observable<Habilidad[]> {
-    return this.http.get<Habilidad[]>(this.habilidadURL);
+    return this.http.get<Habilidad[]>(this.habilidadURL+`/invitado`);
   }
 
 }

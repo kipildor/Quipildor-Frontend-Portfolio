@@ -13,7 +13,7 @@ export class EducacionService {
   constructor(private http:HttpClient) { }
 
   public listarEduc():Observable<Educacion[]> {
-    return this.http.get<Educacion[]>(this.educacionURL);
+    return this.http.get<Educacion[]>(this.educacionURL+`/invitado`);
 
   }
 

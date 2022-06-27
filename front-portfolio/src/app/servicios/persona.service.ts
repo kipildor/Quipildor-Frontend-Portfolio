@@ -16,7 +16,7 @@ export class PersonaService {
   public mostrarPersona(id:number):Observable<Persona> {
     //console.log("Holaaaa");
     //return this.http.get<Persona>(this.personaURL+`traer/persona/${id}`);
-    return this.http.get<Persona>(this.personaURL+`/traer/persona/${id}`);
+    return this.http.get<Persona>(this.personaURL+`/invitado/traer-persona/${id}`);
   }
 
   public modificarPersona(id:number, per:Persona):Observable<any> {
