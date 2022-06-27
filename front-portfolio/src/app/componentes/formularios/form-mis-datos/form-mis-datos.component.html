@@ -1,5 +1,5 @@
 <div class="contenedor transp" >
-  <form action="" class="form" >
+  <form action="" class="form" [formGroup]="fg" (submit)="actualizar_persona()" >
     <div class="form-header">
       <div class="barraSup">
         <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
@@ -8,28 +8,42 @@
     </div>
 
     <label for="nombre" class="form-label">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ingrese su Nombre" value="{{perso.nombre}}" [(ngModel)]="perso.nombre">
+    <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Ingrese su Nombre"
+          formControlName="nombre">
+    <!--<div class="error" *ngIf="(fg.get('nombre').hasError('required') && fg.get('nombre').touched) ||
+                            (fg.get('nombre').hasError('min') && fg.get('nombre').touched)
+                            ">Nombre invalido</div>-->
 
     <label for="apellido" class="form-label">Apellido:</label>
-    <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Ingrese su Apellido" value="{{perso.apellido}}" [(ngModel)]="perso.apellido">
+    <input type="text" id="apellido" name="apellido" class="form-input" placeholder="Ingrese su Apellido"
+          formControlName="apellido">
+    <!--<div class="error" *ngIf="(fg.get('apellido').hasError('required') && fg.get('apellido').touched) ||
+                            (fg.get('apellido').hasError('min') && fg.get('apellido').touched)
+                            ">Apellido invalido</div>-->
 <!--
     <label for="fecha-nac" class="form-label">Fecha de nacimiento:</label>
     <input type="text" id="fecha-nac" class="form-input" placeholder="Ingrese la Fecha de su nacimiento">
 -->
     <label for="ubicacion" class="form-label">Ubicación:</label>
-    <input type="text" id="ubicacion" name="ubicacion" class="form-input" placeholder="Ingrese de donde es" value="{{perso.ubicacion}}" [(ngModel)]="perso.ubicacion">
+    <input type="text" id="ubicacion" name="ubicacion" class="form-input" placeholder="Ingrese de donde es"
+           formControlName="ubicacion">
 
     <label for="titulo" class="form-label">Título:</label>
-    <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Ingrese un título para usted" value="{{perso.titProfesional}}" [(ngModel)]="perso.titProfesional">
+    <input type="text" id="titulo" name="titulo" class="form-input" placeholder="Ingrese un título para usted"
+          value="{{perso.titProfesional}}" formControlName="titulo">
 
     <label for="actividad" class="form-label">Actividad Actual:</label>
-    <input type="text" id="actividad" name="actividad" class="form-input" placeholder="Ingrese su Actividad Actual" value="{{perso.actividadActual}}" [(ngModel)]="perso.actividadActual">
+    <input type="text" id="actividad" name="actividad" class="form-input" placeholder="Ingrese su Actividad Actual"
+          value="{{perso.actividadActual}}" formControlName="actividad">
 
-    <input type="hidden" id="id-persona" name="id-persona" class="form-input" value="{{perso.id}}" [(ngModel)]="perso.id">
+    <input type="hidden" id="id_persona" name="id_persona" class="form-input" value="{{perso.id}}" formControlName="id_persona">
 
 
-    <input type="submit" class="btn-submit" value="Guardar" (click)="actualizar_persona()">
+    <input type="submit" class="btn-submit" value="Guardar" [disabled]="fg.invalid">
 
+    <!--<button class="form-label" [disabled]="fg.invalid">Register me!</button>-->
+
+    <p class="form-label">{{perso.ubicacion}}</p>
 
   </form>
 </div>

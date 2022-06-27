@@ -109,6 +109,17 @@ body {
   background: #F29718;
 }
 
+.contenedor .form .btn-submit[disabled] {
+  background: grey;
+  color: #FFF;
+
+}
+
+.contenedor .form .btn-submit[disabled]:hover {
+  background: grey;
+  color: #FFF;
+  cursor: default;
+}
 /**********************************/
 
 
@@ -121,4 +132,12 @@ body {
 
 .modal-dialog {
 
+}
+
+.error {
+  color: red;
+  background-color: antiquewhite;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  font-size: 20px;
 }

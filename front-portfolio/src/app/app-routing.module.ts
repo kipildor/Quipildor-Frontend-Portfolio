@@ -9,9 +9,10 @@ const routes: Routes = [
   /*
   { path:'ver_persona', component:PersonaByIdComponent },
   { path:''}
-  */
+
   { path:'', component:AppComponent },
   { path:'formLogin', component:LoginComponent }
+  */
 ];
 
 @NgModule({
