@@ -16,9 +16,10 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 import { PieComponent } from './componentes/pie/pie.component';
 import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/persona-by-id.component';
 import { PersonaService } from './servicios/persona.service';
-import { LoginComponent } from './componentes/formularios/login.component';
+import { LoginComponent } from './jwt/auth/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/form-mis-datos.component';
+import { RegistroComponent } from './jwt/auth/registro.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/
     PieComponent,
     PersonaByIdComponent,
     LoginComponent,
-    FormMisDatosComponent
+    FormMisDatosComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

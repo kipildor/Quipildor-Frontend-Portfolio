@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/persona-by-id.component';
 import { Persona } from './modelos/persona';
-import { LoginComponent } from './componentes/formularios/login.component';
+import { LoginComponent } from './jwt/auth/login.component';
 import { AppComponent } from './app.component';
 
 const routes: Routes = [
@@ -13,6 +13,7 @@ const routes: Routes = [
   { path:'', component:AppComponent },
   { path:'formLogin', component:LoginComponent }
   */
+  { path: 'login', component:LoginComponent}
 ];
 
 @NgModule({

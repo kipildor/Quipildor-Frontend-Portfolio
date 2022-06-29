@@ -7,7 +7,7 @@
     <div id="info-img">
       <!--<img class="profile-image" src="./assets/img/MiFotoCirculo.png" />-->
       <img class="profile-image" src="{{ perso.urlFoto }}" />
-      <div class="btn-edit btn-edit-foto">
+      <div *ngIf="isLogged" class="btn-edit btn-edit-foto">
         <a href="#" class="btn-right" title="Modificar Foto de Perfil"
           ><i class="fa fa-pen"></i
         ></a>
@@ -24,7 +24,7 @@
           <!--<span><a href="#">Información de contacto</a></span>-->
         </div>
       </div>
-      <div class="btn-edit btn-edit-info" (click)="open(content)">
+      <div *ngIf="isLogged" class="btn-edit btn-edit-info" (click)="open(content)">
         <a href="#" class="btn-right" title="Modificar mis Datos"
           ><i class="fa fa-pen"></i
         ></a>

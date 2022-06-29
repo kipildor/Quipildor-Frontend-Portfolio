@@ -37,7 +37,8 @@
           </li>
 
           <li class="nav-item">
-            <button type="button" class="btn btn-primary" (click)="open(content)">Login</button>
+            <button type="button" class="btn btn-primary" *ngIf="!isLogged" (click)="open(content)">Iniciar Sesión</button>
+            <button type="button" class="btn btn-warning" *ngIf="isLogged" (click)="onLogOut()">Cerrar Sesión</button>
             <!--<button type="button" class="btn btn-primary" (click)="modalServ.open(formLogin)">Login</button>-->
             <!--<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
               test modal

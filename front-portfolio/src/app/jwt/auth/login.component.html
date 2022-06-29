@@ -1,0 +1,25 @@
+
+<div class="contenedor transp" >
+  <form class="form" #f="ngForm" (ngSubmit)="onLogin()" novalidate >
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Login</h1>
+    </div>
+
+    <label for="email" class="form-label">Email:</label>
+    <input type="email" id="nombreUsuario" name="nombreUsuario" class="form-input" placeholder="Ingrese su E-mail"
+    [(ngModel)]="nombreUsuario" required>
+
+    <label for="password" class="form-label">Contraseña:</label>
+    <input type="password" id="password" name="password" class="form-input" placeholder="Ingrese su Contraseña"
+    [(ngModel)]="password" required>
+
+    <input type="submit" class="btn-submit" value="Ingresar" [disabled]="!f.valid">
+
+
+  </form>
+</div>
+
+

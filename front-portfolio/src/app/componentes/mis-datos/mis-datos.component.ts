@@ -5,6 +5,7 @@ import { Persona } from 'src/app/modelos/persona';
 import { PersonaService } from 'src/app/servicios/persona.service';
 import { PersonaByIdComponent } from './persona-by-id/persona-by-id.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TokenService } from 'src/app/jwt/service/token.service';
 
 @Component({
   selector: 'app-mis-datos',
@@ -15,13 +16,21 @@ export class MisDatosComponent implements OnInit {
 
   closeResult: string = '';
   public perso:Persona;
+  isLogged = false;
   //public persoById:PersonaByIdComponent;
 
-  constructor(private servi:PersonaService, private router:Router, public modalServ:NgbModal) { }
+  constructor(private servi:PersonaService, private router:Router, public modalServ:NgbModal, private tokenService:TokenService) { }
 
 
   ngOnInit(): void {
     this.servi.mostrarPersona(1).subscribe(data=>{this.perso=data;})
+
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    console.log(this.isLogged);
   }
 
   open(content) {
