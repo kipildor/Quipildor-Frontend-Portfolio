@@ -1,0 +1,24 @@
+<div class="contenedor transp" >
+  <form action="" class="form" >
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Acerca de mi...</h1>
+    </div>
+
+    <label for="parrafo" class="form-label">Texto:</label>
+    <textarea type="text" id="parrafo" name="parrafo" class="form-input" placeholder="Ingrese el Contenido del Párrafo"
+          [(ngModel)]="acerca.parrafo" cols="100" rows="15" > {{acerca.parrafo}} </textarea>
+
+    <input type="hidden" id="id_persona" name="id_persona" class="form-input"
+          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" >
+
+    <!-- <input type="hidden" id="id_persona" name="id_persona" class="form-input"
+          value="{{perso.id}}" [(ngModel)]="perso.id" > -->
+<!-- {{ acerca | json}} -->
+
+    <input type="submit" class="btn-submit" value="Guardar" (click)="actualizar_parrafo()">
+
+  </form>
+</div>

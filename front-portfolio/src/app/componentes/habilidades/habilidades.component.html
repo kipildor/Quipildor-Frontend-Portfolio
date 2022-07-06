@@ -1,7 +1,8 @@
 <!-- Ficha Skill's -->
 <div class="card mat-card" id="fifth-card">
     <div id="fichaEducacion" class="ficha">
-      <h1 class="tituloFicha tituloSkill">Habilidades / Conocimiento  <a href="#" class="btn-plus" title="Agregar Habilidad o Conocimiento" ><i class="fas fa-plus-circle"></i></a> </h1>
+      <h1 class="tituloFicha tituloSkill">Habilidades / Conocimiento
+        <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Habilidad o Conocimiento" ><i class="fas fa-plus-circle"></i></a> </h1>
       <!--<div id="contBloquesSkill" class="contBloquesSkill" >-->
 
 <!--
@@ -71,7 +72,7 @@
         </div>
       </div>
     </div>
-    <div class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
+    <div *ngIf="isLogged" class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
       <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
         <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
           <i class="fa fa-pen"></i>

@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
 
   }
 */
+
   isLogged = false;
   isLoginFail = false;
   loginUsuario: LoginUsuario;
@@ -56,6 +57,9 @@ export class LoginComponent implements OnInit {
         this.tokenService.setToken(data.token);
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
+        /* Modificar el Back para buscar el ID de la persona por el email y devolverlo,
+        invocarlo acá y asignarselo al seteo siguiente en vez del valor hardcodeado */
+        this.tokenService.setUserID(1);
         this.roles = data.authorities;
         /* this.toastr.success('Bienvenido ' + data.nombreUsuario, 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'

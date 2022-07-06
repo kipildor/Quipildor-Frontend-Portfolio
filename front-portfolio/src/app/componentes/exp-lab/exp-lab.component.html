@@ -3,7 +3,7 @@
   <div id="fichaExpLaboral" class="ficha">
     <h1 class="tituloFicha tituloExpLaboral">
       Experiencia laboral
-      <a href="#" class="btn-plus" title="Agregar Lugar de Trabajo"
+      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Lugar de Trabajo"
         ><i class="fas fa-plus-circle"></i
       ></a>
     </h1>
@@ -28,7 +28,7 @@
             class="logoExpLab"
           />
         </div>
-        <div class="contBtn-expLab col-sm-1 centrar-h">
+        <div *ngIf="isLogged" class="contBtn-expLab col-sm-1 centrar-h">
           <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
             <a href="#" class="btn-right" title="Modificar Datos de Trabajo...">
               <i class="fa fa-pen"></i>

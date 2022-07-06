@@ -30,7 +30,7 @@ export class MisDatosComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
-    console.log(this.isLogged);
+    console.log("Logueado mis datos:"+this.isLogged);
   }
 
   open(content) {

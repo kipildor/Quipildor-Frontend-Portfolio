@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { TokenService } from 'src/app/jwt/service/token.service';
 import { Proyecto } from 'src/app/modelos/proyecto';
 import { ProyectoService } from 'src/app/servicios/proyecto.service';
 
@@ -11,11 +12,19 @@ import { ProyectoService } from 'src/app/servicios/proyecto.service';
 export class ProyectosComponent implements OnInit {
 
   public listaProyectos:Proyecto[]=[];
+  public isLogged = false;
 
-  constructor(private router:Router, private serviProy:ProyectoService) { }
+  constructor(private router:Router, private serviProy:ProyectoService, private tokenService: TokenService) { }
 
   ngOnInit(): void {
     this.serviProy.listarProyectos().subscribe(response=>this.listaProyectos=response);
+
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else {
+      this.isLogged = false;
+    }
+    console.log("Logueado mis datos:"+this.isLogged);
   }
 
   urlVacia(urlBDD):boolean {

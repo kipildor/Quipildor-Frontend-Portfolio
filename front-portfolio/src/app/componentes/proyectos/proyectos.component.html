@@ -3,7 +3,7 @@
   <div id="fichaProyectos" class="ficha">
     <h1 class="tituloFicha tituloProyectos">
       Mis Proyectos
-      <a href="#" class="btn-plus" title="Agregar Proyecto..."
+      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Proyecto..."
         ><i class="fas fa-plus-circle"></i
       ></a>
     </h1>
@@ -44,7 +44,7 @@
           </div>
         </div>
 
-        <div class="contBtn-proyectos col-sm-1 centrar-h">
+        <div *ngIf="isLogged" class="contBtn-proyectos col-sm-1 centrar-h">
           <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
             <a href="#" class="btn-right" title="Modificar Proyecto...">
               <i class="fa fa-pen"></i>

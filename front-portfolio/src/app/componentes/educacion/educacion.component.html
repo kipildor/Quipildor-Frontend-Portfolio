@@ -3,7 +3,7 @@
   <div id="fichaEducacion" class="ficha">
     <h1 class="tituloFicha tituloEducacion">
       Educación
-      <a href="#" class="btn-plus" title="Agregar Lugar de Educación/Título"
+      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Lugar de Educación/Título"
         ><i class="fas fa-plus-circle"></i
       ></a>
     </h1>
@@ -44,7 +44,8 @@
             class="logoInstitutoEduc"
           />
         </div>
-        <div class="contBtn-educacion col-sm-1 centrar-h">
+        <!--
+        <div *ngIf="isLogged" class="contBtn-educacion col-sm-1 centrar-h">
           <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
             <a href="#" class="btn-right" title="Modificar Datos Educativos...">
               <i class="fa fa-pen"></i>
@@ -59,7 +60,7 @@
               <i class="far fa-trash-alt"></i>
             </a>
           </div>
-        </div>
+        </div> -->
       </div>
 
       <!--      <hr class="separador-educacion" />-->

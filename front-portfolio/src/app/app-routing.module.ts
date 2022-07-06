@@ -4,6 +4,8 @@ import { PersonaByIdComponent } from './componentes/mis-datos/persona-by-id/pers
 import { Persona } from './modelos/persona';
 import { LoginComponent } from './jwt/auth/login.component';
 import { AppComponent } from './app.component';
+import { RegistroComponent } from './jwt/auth/registro.component';
+import { PortfolioGuardService as guard } from './jwt/guards/portfolio-guard.service';
 
 const routes: Routes = [
   /*
@@ -13,6 +15,8 @@ const routes: Routes = [
   { path:'', component:AppComponent },
   { path:'formLogin', component:LoginComponent }
   */
+  { path: 'lista', component: RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] } },
+  { path: 'registro', component: RegistroComponent },
   { path: 'login', component:LoginComponent}
 ];
 

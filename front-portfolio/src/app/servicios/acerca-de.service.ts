@@ -13,8 +13,25 @@ export class AcercaDeService {
   constructor(private http:HttpClient) { }
 
   public listarParrafos():Observable<AcercaDe[]> {
-
     return this.http.get<AcercaDe[]>(this.acercaDeURL+`/invitado`);
-
   }
+
+  public traerParrafo(idParrafo:number):Observable<AcercaDe> {
+    return this.http.get<AcercaDe>(this.acercaDeURL+`/${idParrafo}`);
+  }
+
+  public crearParrafo(parrafo:AcercaDe):Observable<any> {
+    return this.http.post<any>(this.acercaDeURL+`/crear`, parrafo);
+  }
+
+  public actualizarParrafo(id:number, parrafo:AcercaDe):Observable<any> {
+    return this.http.put<any>(this.acercaDeURL+`/editar/${id}`, parrafo);
+  }
+
+  public borrarParrafo(id:number):Observable<any> {
+    return this.http.delete<any>(this.acercaDeURL+`/borrar/${id}`);
+  }
+
+
+
 }

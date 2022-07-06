@@ -20,6 +20,8 @@ import { LoginComponent } from './jwt/auth/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/form-mis-datos.component';
 import { RegistroComponent } from './jwt/auth/registro.component';
+import { interceptorProvider, PortfolioInterceptorService } from './jwt/interceptors/portfolio-interceptor.service';
+import { FormAcercaDeComponent } from './componentes/formularios/form-acerca-de/form-acerca-de.component';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { RegistroComponent } from './jwt/auth/registro.component';
     PersonaByIdComponent,
     LoginComponent,
     FormMisDatosComponent,
-    RegistroComponent
+    RegistroComponent,
+    FormAcercaDeComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,10 @@ import { RegistroComponent } from './jwt/auth/registro.component';
     HttpClientModule,
     NgbModule
   ],
-  providers: [PersonaService],
+  providers: [
+    PersonaService,
+    interceptorProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

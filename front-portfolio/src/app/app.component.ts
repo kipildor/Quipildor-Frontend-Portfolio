@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'Portfolio de Quipildor Leandro';
-  
-  constructor(private router:Router){}
+  //public isLogged = false;
+
+
+  constructor(private router:Router){
+    //console.log("holaaaaaa kipy");
+  }
 
   Ver_persona() {
     this.router.navigate(["ver_persona"]);
   }
+/* Probar consultar si esta logueado */
 
 }

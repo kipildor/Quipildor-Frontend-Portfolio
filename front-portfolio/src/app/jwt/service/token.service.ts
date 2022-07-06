@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'AuthToken';
 const USERNAME_KEY = 'AuthUserName';
 const AUTHORITIES_KEY = 'AuthAuthorities';
+//const USERID_KEY = 'AuthUserID';//Agregado
 
 @Injectable({
   providedIn: 'root'
@@ -49,4 +50,16 @@ export class TokenService {
   public logOut(): void {
     window.sessionStorage.clear();
   }
+
+  //Agregado para guardar como variable se sesion el ID de quien se loguea
+  public setUserID(userID: number): void {
+
+    window.sessionStorage.removeItem('USERID_KEY');
+    window.sessionStorage.setItem('USERID_KEY', JSON.stringify(userID));
+  }
+
+  public getUserID(): number {
+    return JSON.parse(sessionStorage.getItem('USERID_KEY'));
+  }
+
 }
