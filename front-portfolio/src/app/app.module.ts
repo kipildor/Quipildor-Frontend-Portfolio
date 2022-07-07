@@ -24,6 +24,9 @@ import { interceptorProvider, PortfolioInterceptorService } from './jwt/intercep
 import { FormAcercaDeComponent } from './componentes/formularios/form-acerca-de/form-acerca-de.component';
 import { FormAcercaDeAltaComponent } from './componentes/formularios/form-acerca-de/form-acerca-de-alta.component';
 import { FormAcercaDeBorrarComponent } from './componentes/formularios/form-acerca-de/form-acerca-de-borrar.component';
+import { FormExpLabBorrarComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-borrar.component';
+import { FormExpLabAltaComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-alta.component';
+import { FormExpLabModifComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-modif.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import { FormAcercaDeBorrarComponent } from './componentes/formularios/form-acer
     RegistroComponent,
     FormAcercaDeComponent,
     FormAcercaDeAltaComponent,
-    FormAcercaDeBorrarComponent
+    FormAcercaDeBorrarComponent,
+    FormExpLabBorrarComponent,
+    FormExpLabAltaComponent,
+    FormExpLabModifComponent
   ],
   imports: [
     BrowserModule,

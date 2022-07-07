@@ -1,0 +1,50 @@
+<div class="contenedor transp" >
+  <form action="" class="form" >
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Agregar Experiencia Laboral...</h1>
+    </div>
+
+    <label for="nombreEmp" class="form-label">Nombre de la empresa:</label>
+    <input type="text" id="nombreEmp" name="nombreEmp" class="form-input" placeholder="Ingrese el nombre de la empresa"
+          value="" [(ngModel)]="expLab.nombreEmp" >
+
+    <label for="fechaIng" class="form-label">Fecha de Ingreso:</label>
+    <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaIng" name="fechaIng"
+          class="form-input" value="{{ anioActual }}" [(ngModel)]="expLab.fechaIng">
+      <!-- <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script> -->
+
+    <label for="fechaSalida" class="form-label">Fecha de Salida:</label>
+    <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaSalida" name="fechaSalida"
+          class="form-input check-anterior" value="{{ anioActual }}" [(ngModel)]="expLab.fechaSalida">
+    <div class="form-label check">
+      <input type="checkbox" id="fechaTodavia" name="fechaTodavia" class="check-cuadro"
+            [(ngModel)]="todaviaTrabajando" checked >
+      <label class="check-texto">Todavía trabajando</label>
+    </div>
+      <!-- <script>
+        document.querySelector("input[type=number]")
+        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
+      </script> -->
+
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <textarea type="text" id="descripcion" name="descripcion" class="form-input" placeholder="Ingrese una descripción de sus tareas"
+              [(ngModel)]="expLab.descripcion" cols="100" rows="4" ></textarea>
+
+
+    <label for="urlLogo" class="form-label">Logo de la empresa:</label>
+    <input type="file" id="urlLogo" name="urlLogo" class="form-input" placeholder="Ingrese el logo de la empresa"
+          value="" [(ngModel)]="expLab.urlLogo" >
+
+    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
+          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
+
+    <input type="submit" class="btn-submit" value="Guardar" (click)="agregar_exp_lab()">
+
+  </form>
+</div>

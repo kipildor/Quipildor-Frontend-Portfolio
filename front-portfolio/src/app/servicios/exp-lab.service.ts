@@ -15,4 +15,21 @@ export class ExpLabService {
   public listarExperiencias():Observable<ExpLab[]> {
     return this.http.get<ExpLab[]>(this.expLabURL+`/invitado`);
   }
+
+  public traerExperiencia(idExpLab:number):Observable<ExpLab> {
+    return this.http.get<ExpLab>(this.expLabURL+`/${idExpLab}`);
+  }
+
+  public crearExperiencia(expLab:ExpLab):Observable<any> {
+    return this.http.post<any>(this.expLabURL+`/crear`, expLab);
+  }
+
+  public actualizarExperiencia(idExpLab:number, expLab:ExpLab):Observable<any> {
+    return this.http.put<any>(this.expLabURL+`/editar/${idExpLab}`, expLab);
+  }
+
+  public borrarExperiencia(idExpLab:number):Observable<any> {
+    return this.http.delete<any>(this.expLabURL+`/borrar/${idExpLab}`);
+  }
+
 }

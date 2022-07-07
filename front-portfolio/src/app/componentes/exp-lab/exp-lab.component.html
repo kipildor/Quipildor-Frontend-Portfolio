@@ -3,9 +3,11 @@
   <div id="fichaExpLaboral" class="ficha">
     <h1 class="tituloFicha tituloExpLaboral">
       Experiencia laboral
-      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Lugar de Trabajo"
-        ><i class="fas fa-plus-circle"></i
-      ></a>
+      <span *ngIf="isLogged" (click)="open(contAltaExp)">
+        <a href="#" class="btn-plus" title="Agregar Lugar de Trabajo"
+          ><i class="fas fa-plus-circle"></i
+        ></a>
+      </span>
     </h1>
    <!-- {{ listaExp | json }}-->
 
@@ -46,3 +48,15 @@
     </div>
   </div>
 </div>
+
+<ng-template #contAltaExp let-modal>
+  <app-form-exp-lab-alta></app-form-exp-lab-alta>
+</ng-template>
+
+<ng-template #contModifExp let-modal>
+  <app-form-exp-lab-modif></app-form-exp-lab-modif>
+</ng-template>
+
+<ng-template #contBorrarExp let-modal>
+  <app-form-exp-lab-borrar></app-form-exp-lab-borrar>
+</ng-template>
