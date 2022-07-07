@@ -1,46 +1,26 @@
+* {
+  margin: 0;
+  padding : 0;
+  /*-webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;*/
+  background-color: transparent;
+}
+/*
+body {
+  background: url(./assets/img/slide_03.jpg);
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+*/
 
-/* Título de la sección "Acerca de mi..."  */
-.tituloAcercaDM {
-}
-
-/* Resumen de la sección "Acerca de mi..."  */
-#contResumenAcercaDeMi {
-    margin-top: 1rem;
-    display: flex;
-    flex-wrap: nowrap;
-}
-.text-acercaDeMi {
-/*#contResumenAcercaDeMi {*/
-/*    padding-top: 1rem;*/
-    padding-bottom: 0;
-    margin-bottom: 0;
-    display: inline;
-    float: left;
-}
-#text-acercaDeMi-1 {
-    font-style: italic;
-    font-weight:bold;
-    display: inline;
-}
-.contParrafosAcercaDeMi {
-    margin-top: 1rem;
-}
-.contIndividual-P {
-    /*margin-top: 1rem;*/
-    display: flex;
-    flex-wrap: nowrap;
-}
-
-
-/* Formulario borrar */
-
-.contenedorF {
+.contenedor {
   border-radius: 20px;
 
   vertical-align: middle;
 }
 
-.contenedorF .form .form-header .form-title {
+.contenedor .form .form-header .form-title {
   font-weight: normal;
   font-family: sans-serif;
   color: #ff851b;
@@ -71,7 +51,7 @@
   /*font-size: 2em;*/
 }
 
-.contenedorF .form {
+.contenedor .form {
   background: rgba(0,0,0,.3);
   width: 100%;
   max-width: 500px;
@@ -83,7 +63,7 @@
   /*background-color: transparent;*/
 }
 
-.contenedorF .form .form-label {
+.contenedor .form .form-label {
   display: block;
   color: #ff851b;
   font-size: 16px;
@@ -91,7 +71,7 @@
   position: relative;
 }
 
-.contenedorF .form .form-input, form-textarea {
+.contenedor .form .form-input, form-textarea {
   background: rgba(0,0,0,.7);
   border: none;
   outline: none;
@@ -105,13 +85,13 @@
   font-family: Roboto;
 }
 
-.contenedorF .form .form-textarea {
+.contenedor .form .form-textarea {
   resize: vertical;
   max-height: 150px;
   min-height: 50px;
 }
 
-.contenedorF .form .btn-submit {
+.contenedor .form .btn-submit {
   width: 100%;
   font-family: Roboto;
   outline: none;
@@ -125,17 +105,17 @@
   margin: 15px 0;
 }
 
-.contenedorF .form .btn-submit:hover {
+.contenedor .form .btn-submit:hover {
   background: #F29718;
 }
 
-.contenedorF .form .btn-submit[disabled] {
+.contenedor .form .btn-submit[disabled] {
   background: grey;
   color: #FFF;
 
 }
 
-.contenedorF .form .btn-submit[disabled]:hover {
+.contenedor .form .btn-submit[disabled]:hover {
   background: grey;
   color: #FFF;
   cursor: default;

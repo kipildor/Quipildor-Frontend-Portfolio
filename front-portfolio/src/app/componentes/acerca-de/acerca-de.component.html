@@ -2,9 +2,11 @@
 <div class="card mat-card" id="second-card">
   <div id="fichaAcercaDeMi" class="ficha">
     <h1 class="tituloFicha tituloAcercaDM">Acerca de mi...
-      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Párrafo Acerca de mi..."
-        ><i class="fas fa-plus-circle"></i
-      ></a>
+      <span *ngIf="isLogged" (click)="open(contAltaParrafo)">
+        <a href="#" class="btn-plus" title="Agregar Párrafo Acerca de mi..."
+          ><i class="fas fa-plus-circle"></i>
+        </a>
+      </span>
     </h1>
 
     <!--
@@ -37,7 +39,7 @@
             <p id="" class="text-P-acercaDeMi">
               {{ parr.parrafo }}
             </p>
-            <!-- <div *ngIf="isLogged" class="btn-edit lapizAlLado" (click)="formulario_parrafo(parr.idParrafo, contentAcerca)">
+            <div *ngIf="isLogged" class="btn-edit lapizAlLado" (click)="formulario_parrafo(parr.idParrafo, contentAcerca)">
               <a
                 href="#"
                 class="btn-right"
@@ -46,11 +48,11 @@
                 <i class="fa fa-pen"></i>
               </a>
             </div>
-            <div *ngIf="isLogged" class="btn-delete lapizAlLado" (click)="borrar_parrafo(parr.idParrafo)">
+            <div *ngIf="isLogged" class="btn-delete lapizAlLado" (click)="cargar_borrar_parrafo(parr.idParrafo, contentBorrarParrafo)">
               <a href="#" class="btn-right" title="Eliminar Párrafo...">
                 <i class="far fa-trash-alt"></i>
               </a>
-            </div> -->
+            </div>
           </div>
         </div>
       </ng-template>
@@ -66,10 +68,19 @@
         style="display: none"
       />
     </div>
---></div>
+-->
+</div>
+
+<ng-template #contAltaParrafo let-modal>
+  <app-form-acerca-de-alta></app-form-acerca-de-alta>
+</ng-template>
 
 <ng-template #contentAcerca let-modal>
   <!-- <app-form-mis-datos></app-form-mis-datos> -->
   <app-form-acerca-de></app-form-acerca-de>
 
+</ng-template>
+
+<ng-template #contentBorrarParrafo let-modal>
+  <app-form-acerca-de-borrar></app-form-acerca-de-borrar>
 </ng-template>

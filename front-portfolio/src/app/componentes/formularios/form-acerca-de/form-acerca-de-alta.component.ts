@@ -5,35 +5,31 @@ import { AcercaDeService } from 'src/app/servicios/acerca-de.service';
 import { AcercaDeComponent } from '../../acerca-de/acerca-de.component';
 
 @Component({
-  selector: 'app-form-acerca-de',
-  templateUrl: './form-acerca-de.component.html',
-  styleUrls: ['./form-acerca-de.component.css']
+  selector: 'app-form-acerca-de-alta',
+  templateUrl: './form-acerca-de-alta.component.html',
+  styleUrls: ['./form-acerca-de-alta.component.css']
 })
-export class FormAcercaDeComponent implements OnInit {
+export class FormAcercaDeAltaComponent implements OnInit {
 
-  public idParrafo:number = 1;//modificarlooooo
-  public acerca:AcercaDe;
-  //public fg:FormGroup;
+  public persona_id:number = 1;//modificarlooooo
+  public posicion:number = 99;//modificarlo
+  public acerca:AcercaDe=new AcercaDe(null,'',this.posicion,this.persona_id);
 
   constructor(private modalService:NgbModal, private serviAcerca:AcercaDeService/*, private router:Router,
             private rutaActiv:ActivatedRoute*/, public acercaDeComp:AcercaDeComponent/*, public fb:FormBuilder*/) { }
 
   ngOnInit(): void {
-    this.idParrafo = this.acercaDeComp.parrActual;
-
-    this.serviAcerca.traerParrafo(this.idParrafo).subscribe(data=>{this.acerca=data;},
-      err=>console.log(err)
-    );
-    /* console.log("Revisar");
-    console.log("id="+this.acerca.idParrafo+" cont="+this.acerca.parrafo); */
+    //this.idParrafo = this.acercaDeComp.parrActual;
+    /* this.acerca.persona_id = this.persona_id;
+    this.acerca.posicion = this.posicion; */
   }
 
-  public actualizar_parrafo():void {
+  public crear_parrafo():void {
     //console.log(this.acerca.parrafo);
-    this.serviAcerca.actualizarParrafo(this.idParrafo, this.acerca).subscribe(
+    this.serviAcerca.crearParrafo(this.acerca).subscribe(
       data=>{
         this.acerca=data;
-        this.acercaDeComp.ngOnInit();
+        this.acercaDeComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
       },
       err=>console.log(err)
     );

@@ -22,6 +22,8 @@ import { FormMisDatosComponent } from './componentes/formularios/form-mis-datos/
 import { RegistroComponent } from './jwt/auth/registro.component';
 import { interceptorProvider, PortfolioInterceptorService } from './jwt/interceptors/portfolio-interceptor.service';
 import { FormAcercaDeComponent } from './componentes/formularios/form-acerca-de/form-acerca-de.component';
+import { FormAcercaDeAltaComponent } from './componentes/formularios/form-acerca-de/form-acerca-de-alta.component';
+import { FormAcercaDeBorrarComponent } from './componentes/formularios/form-acerca-de/form-acerca-de-borrar.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { FormAcercaDeComponent } from './componentes/formularios/form-acerca-de/
     LoginComponent,
     FormMisDatosComponent,
     RegistroComponent,
-    FormAcercaDeComponent
+    FormAcercaDeComponent,
+    FormAcercaDeAltaComponent,
+    FormAcercaDeBorrarComponent
   ],
   imports: [
     BrowserModule,
