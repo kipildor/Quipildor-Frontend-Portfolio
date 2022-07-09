@@ -71,7 +71,7 @@ body {
   position: relative;
 }
 
-.contenedor .form .form-input, form-textarea {
+.contenedor .form .form-input, form-textarea, custom-file-input {
   background: rgba(0,0,0,.7);
   border: none;
   outline: none;
@@ -158,4 +158,24 @@ body {
 }
 .check-texto {
   padding-left: 10px;
+}
+.h5-formulario {
+  color: red;
+}
+.mt-5 .ng-star-inserted {
+  margin-top: 0px!important;
+}
+.contenedor .form .margen-abajo-5 {
+  margin-bottom: 5px;
+}
+.image-thumbnail {
+  text-align: center;
+  margin: auto;
+  max-width: 50%;
+}
+.cont-vista-previa {
+  text-align: center;
+}
+.cont-vista-previa .h5-formulario {
+  text-align: left;
 }

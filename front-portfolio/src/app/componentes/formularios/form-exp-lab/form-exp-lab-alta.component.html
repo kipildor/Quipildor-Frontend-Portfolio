@@ -1,5 +1,5 @@
 <div class="contenedor transp" >
-  <form action="" class="form" >
+  <form action="agregar_exp_lab()" class="form" enctype="multipart/form-data">
     <div class="form-header">
       <div class="barraSup">
         <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
@@ -37,9 +37,23 @@
               [(ngModel)]="expLab.descripcion" cols="100" rows="4" ></textarea>
 
 
-    <label for="urlLogo" class="form-label">Logo de la empresa:</label>
+    <!-- <label for="urlLogo" class="form-label">Logo de la empresa:</label>
     <input type="file" id="urlLogo" name="urlLogo" class="form-input" placeholder="Ingrese el logo de la empresa"
-          value="" [(ngModel)]="expLab.urlLogo" >
+          value="" [(ngModel)]="expLab.urlLogo" > -->
+
+    <label for="imagen" class="form-label">Logo de la empresa:</label>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
+            (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif">
+      <!-- <label class="custom-file-label" for="imagen">Elige una imagen</label> -->
+    </div>
+    <div *ngIf="imagen" class="mt-5_ cont-vista-previa">
+      <h5 class="h5-formulario">Vista Previa:</h5>
+      <div>
+          <img class="image-thumbnail logoExpLab" [src]="imagenMin">
+      </div>
+    </div>
+
 
     <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
           value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
@@ -48,3 +62,8 @@
 
   </form>
 </div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Subiendo imagen...</p>
+</ngx-spinner>

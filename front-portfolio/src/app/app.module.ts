@@ -28,6 +28,9 @@ import { FormExpLabBorrarComponent } from './componentes/formularios/form-exp-la
 import { FormExpLabAltaComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-alta.component';
 import { FormExpLabModifComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-modif.component';
 
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -58,7 +61,9 @@ import { FormExpLabModifComponent } from './componentes/formularios/form-exp-lab
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgbModule
+    NgbModule,
+    NgxSpinnerModule,
+    BrowserAnimationsModule
   ],
   providers: [
     PersonaService,
