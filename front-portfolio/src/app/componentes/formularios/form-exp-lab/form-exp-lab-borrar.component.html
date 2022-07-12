@@ -1,1 +1,51 @@
-<p>form-exp-lab-borrar works!</p>
+<div class="contenedor transp" >
+  <form action="" class="form" >
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">¿Borrar esta Experiencia Laboral?</h1>
+    </div>
+
+    <div class="contDatos"><!--{{ expLab | json}}-->
+      <div class="contDatosIzq mt-9">
+        <h4 class="form-title titulo-nom-emp">{{ expLab.nombreEmp }}</h4>
+        <!-- <span> -->
+          <div class="fechas-expLab">{{ expLab.fechaIng }} - <span *ngIf="expLab.fechaSalida!=2999;else todavia">{{ expLab.fechaSalida }}</span>
+            <ng-template #todavia>Hasta el momento...</ng-template>
+          </div>
+        <!-- </span> -->
+        <span>{{ expLab.descripcion }}</span>
+      </div>
+      <div class="contDatosDer mt-3 centrar-h">
+        <div *ngIf="!imgNula(); else sinimagen" class="contImg-expLab col-sm-2 centrar-h">
+            <img src="{{ expLab.urlLogo }}" alt="Logo {{ expLab.nombreEmp }}" class="logoExpLab" />
+        </div>
+
+        <ng-template #sinimagen>
+          <div class="contImg-expLab col-sm-2 centrar-h">
+            <img src="./assets/img/sin_imagen_V1.png" alt="Empresa sin logo" class="logoExpLab" />
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+
+
+
+    <input type="hidden" id="idExp" name="idExp" class="form-input"
+          value="{{ idExpBorrar }}" >
+
+    <input type="submit" class="btn-submit" value="Borrar" (click)="borrar_exp_lab()">
+
+   <!--  <input type="text" id="url" name="url" class="form-input" placeholder=""
+          value="{{ imagenRespuesta.imagenUrl }}" [(ngModel)]="imagenRespuesta.imagenUrl" > -->
+
+  </form>
+</div>
+
+<!--
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Subiendo imagen...</p>
+</ngx-spinner> -->
+

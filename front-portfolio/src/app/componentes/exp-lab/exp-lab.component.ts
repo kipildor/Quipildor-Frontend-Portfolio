@@ -15,9 +15,10 @@ export class ExpLabComponent implements OnInit {
   closeResult: string = '';
   public listaExp : ExpLab[]=[];
   public isLogged = false;
-  public expActual =0;
+  //public expActual =0;
   public idExpBorrar =0;
   public expBorrar:ExpLab;
+  public idExpEditar =0;
 
   constructor(private router:Router, private serviExp:ExpLabService, private tokenService:TokenService,
             private modalServ:NgbModal) { }
@@ -41,6 +42,28 @@ export class ExpLabComponent implements OnInit {
     });
   }
 
+  openBorrar(idExp, contentB) {
+    //console.log("Se clickeó el botón de borrar.");
+    this.idExpBorrar = idExp;
+
+    this.modalServ.open(contentB, {ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
+  openEditar(idExp, contentE) {
+    //console.log("Se clickeó el botón de editar.");
+    this.idExpEditar = idExp;
+
+    this.modalServ.open(contentE, {ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+
   public getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
@@ -49,6 +72,15 @@ export class ExpLabComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  fechaNula(variable):boolean {
+    //const variable = this.exp.fechaSalida;
+    if( variable === null || variable == undefined) {
+      return true;
+    } else {
+        return false;
+      }
   }
 
 }

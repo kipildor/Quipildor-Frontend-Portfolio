@@ -16,11 +16,22 @@ export class ImagenService {
     return this.httpClient.get<Imagen[]>(this.imagenURL + 'invitado/list');
   }
 
-  public upload(imagen: File): Observable<any> {
+  public uploadFotoPerfil(imagen: File): Observable<any> {
     const formData = new FormData();
     formData.append('multipartFile', imagen);
-    //console.log("Dato de la imagen: "+formData.get(this.imagenURL));
-    return this.httpClient.post<any>(this.imagenURL + 'upload', formData);
+    return this.httpClient.post<any>(this.imagenURL + 'uploadFotoPerfil', formData);
+  }
+
+  public uploadLogoEmpresa(imagen: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('multipartFile', imagen);
+    return this.httpClient.post<any>(this.imagenURL + 'uploadLogoEmpresa', formData);
+  }
+
+  public uploadFotoProyecto(imagen: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('multipartFile', imagen);
+    return this.httpClient.post<any>(this.imagenURL + 'uploadFotoProyecto', formData);
   }
 
   public delete(id: number): Observable<any> {

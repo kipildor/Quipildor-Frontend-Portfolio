@@ -15,7 +15,8 @@ import { TokenService } from 'src/app/jwt/service/token.service';
 export class MisDatosComponent implements OnInit {
 
   closeResult: string = '';
-  public perso:Persona;
+  fecha:Date = new Date();
+  public perso:Persona = new Persona(null, '', '', this.fecha, '', '', '', '', '', '', '');
   isLogged = false;
   //public persoById:PersonaByIdComponent;
 

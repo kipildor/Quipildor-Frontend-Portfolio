@@ -16,7 +16,7 @@
       <div id="text-expLab-2" class="contIndividual-expLab">
         <div class="contInfo-expLab grow1_ col-sm-9">
           <h5 id="" class="nombreEmpresa-expLab">{{ exp.nombreEmp }}</h5>
-          <div class="fechas-expLab">{{ exp.fechaIng }} - <span *ngIf="exp.fechaSalida;else todavia">{{ exp.fechaSalida }}</span>
+          <div class="fechas-expLab">{{ exp.fechaIng }} - <span *ngIf="exp.fechaSalida!=2999;else todavia">{{ exp.fechaSalida }}</span>
             <ng-template #todavia>Hasta el momento...</ng-template>
           </div>
           <div class="descripcion-expLab">
@@ -30,13 +30,13 @@
             class="logoExpLab"
           />
         </div>
-        <div *ngIf="isLogged" class="contBtn-expLab col-sm-1 centrar-h">
-          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+        <div class="contBtn-expLab col-sm-1 centrar-h">
+          <div *ngIf="isLogged" class="btn-edit lapizAlLado" (click)="openEditar(exp.idExp, contModifExp)">
             <a href="#" class="btn-right" title="Modificar Datos de Trabajo...">
               <i class="fa fa-pen"></i>
             </a>
           </div>
-          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+          <div *ngIf="isLogged" class="btn-delete lapizAlLado" (click)="openBorrar(exp.idExp, contBorrarExp)">
             <a href="#" class="btn-right" title="Eliminar Datos de Trabajo...">
               <i class="far fa-trash-alt"></i>
             </a>
