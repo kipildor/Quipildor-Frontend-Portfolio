@@ -20,7 +20,7 @@ export class FormExpLabAltaComponent implements OnInit {
   public idPersona:number=1;//Modificarlo
   public anioActual:number=new Date(Date.now()).getFullYear();
   public todaviaTrabajando:boolean=false;
-  public expLab:ExpLab= new ExpLab(null,'',this.anioActual,this.anioActual,'',null,this.idPersona);
+  public expLab:ExpLab= new ExpLab(null,'',this.anioActual,this.anioActual,'',null,null,this.idPersona);
 
   //************  Cloudinary  *************************
   @ViewChild('imagenInputFile', {static: false}) imagenFile: ElementRef;

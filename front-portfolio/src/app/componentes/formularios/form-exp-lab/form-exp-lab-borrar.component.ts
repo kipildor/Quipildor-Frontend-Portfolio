@@ -55,18 +55,25 @@ export class FormExpLabBorrarComponent implements OnInit {
   }
 
   public borrar_exp_lab():void {
-    let imagenEnCloudinary:boolean = true;
+    /* let imagenEnCloudinary:boolean = true;
     if(this.imgNula()) {
       imagenEnCloudinary = false;
-    }
-
+    } */
+    this.spinner.show();
     this.serviExpLab.borrarExperiencia(this.idExpBorrar).subscribe(
       data=>{
+        if(this.expLab.idUrlLogo > 0){
+          this.borrarImgNube(this.expLab.idUrlLogo);
+        }
+        this.spinner.hide();
         this.expLabComp.ngOnInit();
       },
-      err=>console.log(err)
+      err=>{
+        this.spinner.hide();
+        console.log(err)
+      }
     );
-    //this.borrarImgNube()
+
     this.modalService.dismissAll();
   }
 
@@ -92,18 +99,19 @@ export class FormExpLabBorrarComponent implements OnInit {
       }
   }
 
-  /* borrarImgNube(id: number): void {
+  borrarImgNube(id: number): void {
     //this.spinner.show();
+
     this.imagenService.delete(id).subscribe(
       data => {
         //this.spinner.hide();
         //this.cargarImagenes();
       },
       err => {
-        //this.spinner.hide();
+        this.spinner.hide();
         console.log(err);
       }
     );
-  } */
+  }
 
 }
