@@ -32,4 +32,8 @@ export class ExpLabService {
     return this.http.delete<any>(this.expLabURL+`/borrar/${idExpLab}`);
   }
 
+  public crearExperienciaConlogo(expLab:ExpLab, img:File):Observable<any> {
+    return this.http.post<any>(this.expLabURL+`/crear_con_logo`, expLab);
+  }
+
 }

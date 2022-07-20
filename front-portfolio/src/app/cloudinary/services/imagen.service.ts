@@ -16,6 +16,12 @@ export class ImagenService {
     return this.httpClient.get<Imagen[]>(this.imagenURL + 'invitado/list');
   }
 
+  public upload(imagen: File): Observable<any> {
+    const formData = new FormData();
+    formData.append('multipartFile', imagen);
+    return this.httpClient.post<any>(this.imagenURL + 'upload', formData);
+  }
+
   public uploadFotoPerfil(imagen: File): Observable<any> {
     const formData = new FormData();
     formData.append('multipartFile', imagen);
