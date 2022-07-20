@@ -23,13 +23,16 @@
             {{ exp.descripcion }}
           </div>
         </div>
-        <div class="contImg-expLab col-sm-2 centrar-h">
-          <img
-            src="{{ exp.urlLogo }}"
-            alt="Logo {{ exp.nombreEmp }}"
-            class="logoExpLab"
-          />
+        <div *ngIf="!imgNula(exp.urlLogo); else sinimagen" class="contImg-expLab col-sm-2 centrar-h">
+          <img src="{{ exp.urlLogo }}" alt="Logo {{ exp.nombreEmp }}" class="logoExpLab" />
         </div>
+
+        <ng-template #sinimagen>
+          <div class="contImg-expLab col-sm-2 centrar-h">
+            <img src="{{ imgVacia }}" alt="Empresa sin logo" class="logoExpLab" />
+          </div>
+        </ng-template>
+
         <div class="contBtn-expLab col-sm-1 centrar-h">
           <div *ngIf="isLogged" class="btn-edit lapizAlLado" (click)="openEditar(exp.idExp, contModifExp)">
             <a href="#" class="btn-right" title="Modificar Datos de Trabajo...">

@@ -149,22 +149,24 @@ export class FormExpLabAltaComponent implements OnInit {
 
   onUploadMio(): void {
     //this.spinner.show();
-    console.log("Paso 2");
+    console.log("Paso 2 - onUploadMio");
     this.imagenService.uploadLogoEmpresa(this.imagen).subscribe(
       data => {
         //this.spinner.hide();
         //this.router.navigate(['/']);
         this.imagenRespuesta=data;
         this.expLab.urlLogo=this.imagenRespuesta.imagenUrl;
+        this.expLab.idUrlLogo=this.imagenRespuesta.id;
+        console.log("Paso 2.1 - onUploadMio MEDIO");
         this.altaExpLab();
       },
       err => {
         alert(err.error.mensaje);
-        //this.spinner.hide();
+        this.spinner.hide();
         this.reset();
       }
     );
-    console.log("Paso 2.1");
+    console.log("Paso 2.2 - onUploadMio FIN");
   }
 
   onUploadConResp(): boolean {
@@ -195,43 +197,53 @@ export class FormExpLabAltaComponent implements OnInit {
   //********************************************************
 
   public agregar_exp_lab():void {
-    console.log("Paso 1");
-    this.onUploadMio();
-   /*    .subscribe(
-      data => {
-      this.serviExpLab.crearExperiencia(this.expLab);
-      this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
-    },
-      err=>console.log(err)
-    ); */
-
-    //this.onUpload();
-
-    //this.expLab.urlLogo = this.imagenRespuesta.imagenUrl;
-    //console.log(this.imagenRespuesta.name);
-    //console.log("Dentro de agregar_exp_lab -- url: "+this.imagenRespuesta.imagenUrl);
-
-    /* this.serviExpLab.crearExperienciaConlogo(this.expLab).subscribe(
-      data=>{
-        this.expLab=data;
+    if(this.cantCambios > 0) {
+      this.spinner.show();
+      console.log("Paso 1 - agregar_exp_lab");
+      this.onUploadMio();
+    /*    .subscribe(
+        data => {
+        this.serviExpLab.crearExperiencia(this.expLab);
         this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
       },
-      err=>console.log(err)
-    ); */
-    //this.modalService.dismissAll();
-    console.log("Paso 1.1");
+        err=>console.log(err)
+      ); */
+
+      //this.onUpload();
+
+      //this.expLab.urlLogo = this.imagenRespuesta.imagenUrl;
+      //console.log(this.imagenRespuesta.name);
+      //console.log("Dentro de agregar_exp_lab -- url: "+this.imagenRespuesta.imagenUrl);
+
+      /* this.serviExpLab.crearExperienciaConlogo(this.expLab).subscribe(
+        data=>{
+          this.expLab=data;
+          this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
+        },
+        err=>console.log(err)
+      ); */
+      //this.modalService.dismissAll();
+      console.log("Paso 1.2 - agregar_exp_lab FIN");
+    }else {
+      this.altaExpLab();
+    }
   }
 
   public altaExpLab():void {
-    console.log("Paso 3");
+    console.log("Paso 3 - altaExpLab");
     this.serviExpLab.crearExperiencia(this.expLab).subscribe(
       data=>{
         this.expLab=data;
+        console.log("Paso 3.1 - altaExpLab MEDIO");
         this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
+        this.spinner.hide();
       },
-      err=>console.log(err)
+      err=>{
+        console.log(err),
+        this.spinner.hide();
+      }
     );
-    console.log("Paso 3.1");
+    console.log("Paso 3.2 - altaExpLab FIN");
     this.modalService.dismissAll();
   }
 

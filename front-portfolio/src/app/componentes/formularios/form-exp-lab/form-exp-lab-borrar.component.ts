@@ -20,6 +20,7 @@ export class FormExpLabBorrarComponent implements OnInit {
   public idPersona:number=1;//Modificarlo
   public expLab:ExpLab;
   public logoVacio:boolean;
+  public imgVacia = "./assets/img/sin_imagen_V1.png";
 
 
   constructor(private modalService:NgbModal, private serviExpLab:ExpLabService,
@@ -62,7 +63,7 @@ export class FormExpLabBorrarComponent implements OnInit {
     this.spinner.show();
     this.serviExpLab.borrarExperiencia(this.idExpBorrar).subscribe(
       data=>{
-        if(this.expLab.idUrlLogo > 0){
+        if((this.expLab.idUrlLogo > 0) && !(this.logoVacio)){
           this.borrarImgNube(this.expLab.idUrlLogo);
         }
         this.spinner.hide();
@@ -108,7 +109,7 @@ export class FormExpLabBorrarComponent implements OnInit {
         //this.cargarImagenes();
       },
       err => {
-        this.spinner.hide();
+        //this.spinner.hide();
         console.log(err);
       }
     );

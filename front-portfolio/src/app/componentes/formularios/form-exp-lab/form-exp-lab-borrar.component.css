@@ -149,3 +149,16 @@ body {
 .titulo-nom-emp {
   text-decoration: underline;
 }
+
+
+
+.image-thumbnail {
+  text-align: center;
+  margin: auto;
+  max-width: 100%;
+  /* width: auto; */
+  /* max-height: 200px; */
+}
+.cont-vista-previa {
+  text-align: center;
+}

@@ -19,6 +19,8 @@ export class ExpLabComponent implements OnInit {
   public idExpBorrar =0;
   public expBorrar:ExpLab;
   public idExpEditar =0;
+  public imgVacia = "./assets/img/sin_imagen_V1.png";
+  public logoVacio:boolean;
 
   constructor(private router:Router, private serviExp:ExpLabService, private tokenService:TokenService,
             private modalServ:NgbModal) { }
@@ -79,6 +81,19 @@ export class ExpLabComponent implements OnInit {
     if( variable === null || variable == undefined) {
       return true;
     } else {
+        return false;
+      }
+  }
+
+  imgNula(urlLogo:string):boolean {
+    const variable:string = urlLogo;
+    if( variable == null || variable == undefined || variable == "null" || variable == "undefined" || variable == "") {
+      //console.log("2_ "+this.expLab.urlLogo);
+      this.logoVacio =true;
+      return true;
+    } else {
+        //console.log("2_ "+this.expLab.urlLogo);
+        this.logoVacio = false;
         return false;
       }
   }

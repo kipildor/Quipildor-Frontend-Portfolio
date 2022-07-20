@@ -18,13 +18,13 @@
         <span>{{ expLab.descripcion }}</span>
       </div>
       <div class="contDatosDer mt-3 centrar-h">
-        <div *ngIf="!imgNula(); else sinimagen" class="contImg-expLab col-sm-2 centrar-h">
-            <img src="{{ expLab.urlLogo }}" alt="Logo {{ expLab.nombreEmp }}" class="logoExpLab" />
+        <div *ngIf="!imgNula(); else sinimagen" class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+            <img src="{{ expLab.urlLogo }}" alt="Logo {{ expLab.nombreEmp }}" class="image-thumbnail logoExpLab" />
         </div>
 
         <ng-template #sinimagen>
-          <div class="contImg-expLab col-sm-2 centrar-h">
-            <img src="./assets/img/sin_imagen_V1.png" alt="Empresa sin logo" class="logoExpLab" />
+          <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+            <img src="{{ imgVacia }}" alt="Empresa sin logo" class="image-thumbnail logoExpLab" />
           </div>
         </ng-template>
       </div>
