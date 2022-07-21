@@ -4,6 +4,7 @@
   /*-webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;*/
   background-color: transparent;
+  color:red;
 }
 /*
 body {
@@ -71,7 +72,7 @@ body {
   position: relative;
 }
 
-.contenedor .form .form-input, form-textarea {
+.contenedor .form .form-input, form-textarea, custom-file-input {
   background: rgba(0,0,0,.7);
   border: none;
   outline: none;
@@ -140,4 +141,50 @@ body {
   margin-bottom: 20px;
   margin-top: -10px;
   font-size: 20px;
+}
+
+/**************************************************************
+***************************************************************
+**************************************************************/
+.contenedor .form .check-anterior {
+  margin-bottom: 5px;
+  /* color: chartreuse; */
+}
+
+.contenedor .form .check-anterior[disabled] {
+  margin-bottom: 5px;
+  color: darkgray;
+  /* color:red; */
+  background-color: darkgray;
+}
+
+.check {
+  /*padding-top: -15px;*/
+  margin-bottom: 20px;
+}
+.check-cuadro {
+  padding-left: 5px;
+}
+.check-texto {
+  padding-left: 10px;
+}
+.h5-formulario {
+  color: red;
+}
+.mt-5 .ng-star-inserted {
+  margin-top: 0px!important;
+}
+.contenedor .form .margen-abajo-5 {
+  margin-bottom: 5px;
+}
+.image-thumbnail {
+  text-align: center;
+  margin: auto;
+  max-width: 50%;
+}
+.cont-vista-previa {
+  text-align: center;
+}
+.cont-vista-previa .h5-formulario {
+  text-align: left;
 }
