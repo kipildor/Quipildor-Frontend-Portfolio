@@ -21,10 +21,11 @@
 
     <label for="fechaSalida" class="form-label">Fecha de Salida:</label>
     <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaSalida" name="fechaSalida"
-          class="form-input check-anterior" value="{{ anioActual }}" [(ngModel)]="expLab.fechaSalida">
+          class="form-input check-anterior" value="{{ anioActual }}" [(ngModel)]="expLab.fechaSalida" [disabled]="todaviaTrabajando">
+
     <div class="form-label check">
       <input type="checkbox" id="fechaTodavia" name="fechaTodavia" class="check-cuadro"
-            [(ngModel)]="todaviaTrabajando" checked >
+            [(ngModel)]="todaviaTrabajando" (change)="cambioDelCheck($event)" >
       <label class="check-texto">Todavía trabajando</label>
     </div>
       <!-- <script>
@@ -63,7 +64,7 @@
     <!-- <input type="text" id="url" name="url" class="form-input" placeholder=""
           value="{{ imagenRespuesta.imagenUrl }}" [(ngModel)]="imagenRespuesta.imagenUrl" > -->
           <!-- {{ imagenRespuesta | json }}
-          {{ cantCambios | json }} -->
+          {{ cantCambios | json }} {{ expLab.fechaSalida}}{{anioActual}}-->
 
   </form>
 </div>

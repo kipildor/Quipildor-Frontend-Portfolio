@@ -148,6 +148,14 @@ body {
 **************************************************************/
 .contenedor .form .check-anterior {
   margin-bottom: 5px;
+  /* color: chartreuse; */
+}
+
+.contenedor .form .check-anterior[disabled] {
+  margin-bottom: 5px;
+  color: darkgray;
+  /* color:red; */
+  background-color: darkgray;
 }
 
 .check {

@@ -21,6 +21,7 @@ export class FormExpLabAltaComponent implements OnInit {
   public idPersona:number=1;//Modificarlo
   public anioActual:number=new Date(Date.now()).getFullYear();
   public todaviaTrabajando:boolean=false;
+  //public checkFecha:boolean=false;
   public expLab:ExpLab= new ExpLab(null,'',this.anioActual,this.anioActual,'',null,null,this.idPersona);
 
   //************  Cloudinary  *************************
@@ -118,6 +119,16 @@ export class FormExpLabAltaComponent implements OnInit {
 
       this.modalService.dismissAll();
       return `with: ${reason}`;
+    }
+  }
+
+  public cambioDelCheck(e) {
+    if((e.target.checked)&&(this.todaviaTrabajando==true)) {
+      this.expLab.fechaSalida = 2999;
+      console.log("verdadero");
+    }else{
+      this.expLab.fechaSalida = this.anioActual;
+      console.log("Falso");
     }
   }
 
