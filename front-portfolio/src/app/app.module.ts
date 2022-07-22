@@ -30,6 +30,7 @@ import { FormExpLabModifComponent } from './componentes/formularios/form-exp-lab
 
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImagenPerfilComponent } from './componentes/formularios/imagen-perfil/imagen-perfil.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormAcercaDeBorrarComponent,
     FormExpLabBorrarComponent,
     FormExpLabAltaComponent,
-    FormExpLabModifComponent
+    FormExpLabModifComponent,
+    ImagenPerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,81 @@
+<div class="contenedor transp" >
+  <form action="" class="form" enctype="multipart/form-data">
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Cambiar imágenes...</h1>
+    </div>
+
+
+    <label for="imagen" class="form-label">Foto de perfil:</label>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
+            (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif" [disabled]="quitarImagenPerfil">
+      <!-- <label class="custom-file-label" for="imagen">Elige una imagen</label> -->
+    </div>
+
+    <div class="form-label check">
+      <input type="checkbox" id="sacarImagen" name="sacarImagen" class="check-cuadro"
+            [(ngModel)]="quitarImagenPerfil" (change)="cambioDelCheckImagenPerfil($event)" >
+      <label class="check-texto">Quitar foto de perfil</label>
+    </div>
+
+    <div *ngIf="(imagen || !(imgNula(perso.urlFoto))) && (quitarImagenPerfil==false)" class="mt-5_ cont-vista-previa" >
+      <h5 class="h5-formulario">Vista Previa:</h5>
+      <div *ngIf="imagen; else imgNueva">
+          <img class="image-thumbnail logoExpLab" [src]="imagenMin">
+          <!-- <img class="image-thumbnail logoExpLab" src="{{ expLab.urlLogo }}"> -->
+      </div>
+
+      <ng-template #imgNueva>
+        <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+          <img src="{{ perso.urlFoto }}" alt="Foto del Perfil" class="image-thumbnail logoExpLab" />
+        </div>
+      </ng-template>
+
+    </div>
+
+    <!--*******************************************************************************************************-->
+    <!-- <label for="imagen" class="form-label">Imagen del banner:</label>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
+            (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif" [disabled]="quitarImagen">
+
+    </div>
+
+    <div class="form-label check">
+      <input type="checkbox" id="sacarImagen" name="sacarImagen" class="check-cuadro"
+            [(ngModel)]="quitarImagen" (change)="cambioDelCheckImagen($event)" >
+      <label class="check-texto">Quitar imagen del banner</label>
+    </div>
+
+    <div *ngIf="(imagen || !(imgNula())) && (quitarImagen==false)" class="mt-5_ cont-vista-previa" >
+      <h5 class="h5-formulario">Vista Previa:</h5>
+      <div *ngIf="imagen; else imgNueva">
+          <img class="image-thumbnail logoExpLab" [src]="imagenMin">
+
+      </div>
+
+      <ng-template #imgNueva>
+        <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+          <img src="{{ expLab.urlLogo }}" alt="Logo de la Empresa" class="image-thumbnail logoExpLab" />
+        </div>
+      </ng-template>
+
+    </div> -->
+
+
+    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
+          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
+
+    <input type="submit" class="btn-submit" value="Actualizar" (click)="modif_imagenes()">
+
+
+  </form>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Subiendo imagen...</p>
+</ngx-spinner>
