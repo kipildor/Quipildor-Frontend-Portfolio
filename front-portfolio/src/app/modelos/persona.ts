@@ -10,7 +10,11 @@ export class Persona {
 
     email : string;
 
+    idUrlFoto : number;
+
     urlFoto : string;
+
+    idUrlBanner : number;
 
     urlBanner : string;
 
@@ -24,14 +28,16 @@ export class Persona {
 
     //Constructores
     constructor(id:number, nombre:string, apellido:string, fechaNac:Date, email:string,
-                urlFoto:string, urlBanner:string, password:string, ubicacion:string,
-                titProfesional:string, actividadActual:string) {
+                idUrlFoto:number, urlFoto:string, idUrlBanner:number, urlBanner:string,
+                password:string, ubicacion:string, titProfesional:string, actividadActual:string) {
         this.id = id;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNac = fechaNac;
         this.email = email;
+        this.idUrlFoto = idUrlFoto;
         this.urlFoto = urlFoto;
+        this.idUrlBanner = idUrlBanner;
         this.urlBanner = urlBanner;
         this.password = password;
         this.ubicacion = ubicacion;

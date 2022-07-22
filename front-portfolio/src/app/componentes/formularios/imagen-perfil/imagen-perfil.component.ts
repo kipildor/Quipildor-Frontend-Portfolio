@@ -54,7 +54,7 @@ export class ImagenPerfilComponent implements OnInit {
     }else{
       this.fotoPerfilVacia = false;
       this.urlTemporalPerfil = this.perso.urlFoto;
-      //this.idImgTemporalPerfil = this.perso.idUrlFoto;***********************************
+      this.idImgTemporalPerfil = this.perso.idUrlFoto;
     }
 
   }
@@ -87,11 +87,11 @@ export class ImagenPerfilComponent implements OnInit {
     if((e.target.checked)&&(this.quitarImagenPerfil==true)) {
 
       this.perso.urlFoto = '';
-      //this.perso.idUrlFoto = 0;*******************************************
+      this.perso.idUrlFoto = 0;
       console.log("verdadero");
     }else{
       this.perso.urlFoto = this.urlTemporalPerfil;
-      //this.perso.idUrlFoto = this.idImgTemporalPerfil;**********************
+      this.perso.idUrlFoto = this.idImgTemporalPerfil;
       console.log("Falso");
     }
   }
@@ -159,12 +159,12 @@ export class ImagenPerfilComponent implements OnInit {
   onUploadMio(): void {//Graba con una imagen nueva en el input File
     //this.spinner.show();
     console.log("Paso 2 - onUploadMio");
-    this.imagenService.uploadLogoEmpresa(this.imagen).subscribe(
+    this.imagenService.uploadFotoPerfil(this.imagen).subscribe(
       data => {
 
         this.imagenRespuestaPerfil=data;
         this.perso.urlFoto=this.imagenRespuestaPerfil.imagenUrl;
-        //this.perso.idUrlFoto=this.imagenRespuestaPerfil.id;**************************************
+        this.perso.idUrlFoto=this.imagenRespuestaPerfil.id;
         console.log("Paso 2.1 - onUploadMio MEDIO");
         this.modifImagenes();
       },

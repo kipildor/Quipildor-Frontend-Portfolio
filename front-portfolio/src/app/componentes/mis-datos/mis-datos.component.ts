@@ -16,8 +16,9 @@ export class MisDatosComponent implements OnInit {
 
   closeResult: string = '';
   fecha:Date = new Date();
-  public perso:Persona = new Persona(null, '', '', this.fecha, '', '', '', '', '', '', '');
+  public perso:Persona = new Persona(null, '', '', this.fecha, '',0 , '',0 , '', '', '', '', '');
   isLogged = false;
+  imgVacia = "./assets/img/Perfil_001.jpeg";
   //public persoById:PersonaByIdComponent;
 
   constructor(private servi:PersonaService, private router:Router, public modalServ:NgbModal, private tokenService:TokenService) { }
@@ -56,4 +57,17 @@ export class MisDatosComponent implements OnInit {
     this.ngOnInit();
   }
 
+
+  imgNula(url:string):boolean {
+    //const variable:string = urlLogo;
+    if( url == null || url == undefined || url == "null" || url == "undefined" || url == "") {
+      //console.log("2_ "+this.expLab.urlLogo);
+      //this.logoVacio =true;
+      return true;
+    } else {
+        //console.log("2_ "+this.expLab.urlLogo);
+        //this.logoVacio = false;
+        return false;
+      }
+  }
 }

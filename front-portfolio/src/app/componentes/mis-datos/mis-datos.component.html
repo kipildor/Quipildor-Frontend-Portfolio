@@ -4,15 +4,26 @@
     <img src="{{ perso.urlBanner }}" />
   </div>
   <div id="info" class="ficha">
-    <div id="info-img">
-      <!--<img class="profile-image" src="./assets/img/MiFotoCirculo.png" />-->
-      <img class="profile-image" src="{{ perso.urlFoto }}" />
-      <div *ngIf="isLogged" class="btn-edit btn-edit-foto">
+    <div class="contImg-expLab col-sm-2 centrar-h" id="info-img">
+      <span *ngIf="!imgNula(perso.urlFoto); else sinimagenperfil" >
+        <img src="{{ perso.urlFoto }}" alt="Foto del perfil" class="profile-image" />
+      </span>
+      <div *ngIf="isLogged" class="btn-edit btn-edit-foto" (click)="open(foto)">
         <a href="#" class="btn-right" title="Modificar Foto de Perfil"
           ><i class="fa fa-pen"></i
         ></a>
       </div>
     </div>
+
+    <ng-template #sinimagenperfil>
+      <span>
+        <img src="{{ imgVacia }}" alt="Sin foto de perfil" class="profile-image" />
+      </span>
+    </ng-template>
+
+
+
+
     <div class="limpiarFloat"></div>
     <div id="info-data" class="kcol-xl-4">
       <div>
@@ -41,7 +52,9 @@
 </div>
 
 <ng-template #content let-modal>
-
   <app-form-mis-datos></app-form-mis-datos>
+</ng-template>
 
+<ng-template #foto let-modal>
+  <app-imagen-perfil></app-imagen-perfil>
 </ng-template>
