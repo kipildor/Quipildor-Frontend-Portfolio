@@ -30,6 +30,18 @@ export class ImagenPerfilComponent implements OnInit {
   cantCambiosPerfil: number = 0;
   //cont:number = 0;//borrarlo
   //***************************************************
+  /********** Para el Banner *************************/
+  public fotoBannerVacia:boolean;//La URL que viene de la BD si el campo esta vacio
+  public quitarImagenBanner:boolean=false;
+  public urlTemporalBanner:string='';
+  public idImgTemporalBanner:number=0;
+  @ViewChild('imagenInputFileBanner', {static: false}) imagenFileBanner: ElementRef;
+  imagenBanner: File;
+  imagenMinBanner: File;
+  imagenRespuestaBanner: Imagen = new Imagen('','','');
+  direccionBanner:string;
+  cantCambiosBanner: number = 0;
+  /************ Fin para el banner *******************/
 
   constructor(private modalService:NgbModal, private serviPer:PersonaService,
             public misDatosComp:MisDatosComponent, private imagenService:ImagenService,
@@ -57,6 +69,13 @@ export class ImagenPerfilComponent implements OnInit {
       this.idImgTemporalPerfil = this.perso.idUrlFoto;
     }
 
+    if(this.imgNula(this.perso.urlBanner)) {
+      this.fotoBannerVacia = true;
+    }else{
+      this.fotoBannerVacia = false;
+      this.urlTemporalBanner = this.perso.urlBanner;
+      this.idImgTemporalBanner = this.perso.idUrlBanner;
+    }
   }
 
   imgNula(url:string):boolean {
@@ -100,13 +119,21 @@ export class ImagenPerfilComponent implements OnInit {
 
 
   public modif_imagenes():void {//Llamada del botón
-    if((this.cantCambiosPerfil > 0)&&(this.quitarImagenPerfil==false)) {
-      //Se cambió la imagen y no hay que quitar la imagen nueva ** ¡¡!! Si habia una imagen, hay que borrarla
+    if(((this.cantCambiosPerfil > 0)&&(this.quitarImagenPerfil==false)) || ((this.cantCambiosBanner > 0)&&(this.quitarImagenBanner==false))) {
       this.spinner.show();
-      console.log("Paso 1 - agregar_exp_lab");
-      this.onUploadMio();
+      if((this.cantCambiosPerfil > 0)&&(this.quitarImagenPerfil==false)) {
+        console.log("Paso 1 - agregar_exp_lab - Perfil");
+        this.onUploadMio();
 
-      console.log("Paso 1.2 - agregar_exp_lab FIN");
+        console.log("Paso 1.2 - agregar_exp_lab - Perfil - FIN");
+      }
+      if((this.cantCambiosBanner > 0)&&(this.quitarImagenBanner==false)) {
+        console.log("Paso 1 - agregar_exp_lab - Banner");
+        this.onUploadMioBanner();
+
+        console.log("Paso 1.2 - agregar_exp_lab - Banner - FIN");
+      }
+
     }else {
       //No se cambió la imagen (así que no se sube una) o hay que quitar la imagen que ya había
       this.modifImagenes();
@@ -120,6 +147,7 @@ export class ImagenPerfilComponent implements OnInit {
         this.perso=data;
         console.log("Paso 3.1 - altaExpLab MEDIO");
         this.borrarImgHuerfanaPerfil();
+        this.borrarImgHuerfanaBanner();
         this.misDatosComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
         this.spinner.hide();
       },
@@ -166,7 +194,7 @@ export class ImagenPerfilComponent implements OnInit {
         this.perso.urlFoto=this.imagenRespuestaPerfil.imagenUrl;
         this.perso.idUrlFoto=this.imagenRespuestaPerfil.id;
         console.log("Paso 2.1 - onUploadMio MEDIO");
-        this.modifImagenes();
+        this.modifImagenes(); /* *************************************************************** */
       },
       err => {
         alert(err.error.mensaje);
@@ -182,10 +210,68 @@ export class ImagenPerfilComponent implements OnInit {
     this.imagenMin = null;
     this.imagenFile.nativeElement.value = '';
   }
-  //********************************************************
+  //************ Banner - Cloudinary  ************************
+  onFileChangeBanner(event) {
+    this.cantCambiosBanner++;
+    this.imagenBanner = event.target.files[0];
+    const fr2 = new FileReader();/* fr */
+    fr2.onload = (evento: any) => {
+      this.imagenMinBanner = evento.target.result;
+    };
+    fr2.readAsDataURL(this.imagenBanner);
+  }
 
+  onUploadMioBanner(): void {//Graba con una imagen nueva en el input File
+    //this.spinner.show();
+    console.log("Paso 2 - onUploadMio");
+    this.imagenService.uploadFotoPerfil(this.imagenBanner).subscribe(
+      data => {
 
+        this.imagenRespuestaBanner=data;
+        this.perso.urlBanner=this.imagenRespuestaBanner.imagenUrl;
+        this.perso.idUrlBanner=this.imagenRespuestaBanner.id;
+        console.log("Paso 2.1 - onUploadMio MEDIO");
+        this.modifImagenes();/**************************************************************************/
+      },
+      err => {
+        alert(err.error.mensaje);
+        this.spinner.hide();
+        this.resetBanner();
+      }
+    );
+    console.log("Paso 2.2 - onUploadMio FIN");
+  }
 
+  resetBanner(): void {
+    this.imagenBanner = null;
+    this.imagenMinBanner = null;
+    this.imagenFileBanner.nativeElement.value = '';
+  }
+  //************ FIN Banner - Cloudinary  ************************
+  //************ Banner - funciones replicadas  ************************
+  public cambioDelCheckImagenBanner(e) {
+    if((e.target.checked)&&(this.quitarImagenBanner==true)) {
 
+      this.perso.urlBanner = '';
+      this.perso.idUrlBanner = 0;
+      console.log("verdadero");
+    }else{
+      this.perso.urlBanner = this.urlTemporalBanner;
+      this.perso.idUrlBanner = this.idImgTemporalBanner;
+      console.log("Falso");
+    }
+  }
+
+  public borrarImgHuerfanaBanner():void {
+    if((this.idImgTemporalBanner > 0) && ((this.cantCambiosBanner > 0) || (this.quitarImagenBanner == true))) {
+      this.imagenService.delete(this.idImgTemporalBanner).subscribe(
+        data => {
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    }
+  }
 
 }

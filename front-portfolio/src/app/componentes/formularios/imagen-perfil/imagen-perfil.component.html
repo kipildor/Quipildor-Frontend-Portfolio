@@ -37,40 +37,35 @@
     </div>
 
     <!--*******************************************************************************************************-->
-    <!-- <label for="imagen" class="form-label">Imagen del banner:</label>
+    <label for="imagenBanner" class="form-label">Imagen del banner:</label>
     <div class="custom-file">
-      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
-            (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif" [disabled]="quitarImagen">
-
+      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagenBanner" name="imagenBanner" #imagenInputFileBanner
+            (change)="onFileChangeBanner($event)" accept="image/png, image/jpeg, image/gif" [disabled]="quitarImagenBanner">
+      <!-- <label class="custom-file-label" for="imagen">Elige una imagen</label> -->
     </div>
 
     <div class="form-label check">
-      <input type="checkbox" id="sacarImagen" name="sacarImagen" class="check-cuadro"
-            [(ngModel)]="quitarImagen" (change)="cambioDelCheckImagen($event)" >
+      <input type="checkbox" id="sacarImagenBanner" name="sacarImagenBanner" class="check-cuadro"
+            [(ngModel)]="quitarImagenBanner" (change)="cambioDelCheckImagenBanner($event)" >
       <label class="check-texto">Quitar imagen del banner</label>
     </div>
 
-    <div *ngIf="(imagen || !(imgNula())) && (quitarImagen==false)" class="mt-5_ cont-vista-previa" >
+    <div *ngIf="(imagenBanner || !(imgNula(perso.urlBanner))) && (quitarImagenBanner==false)" class="mt-5_ cont-vista-previa" >
       <h5 class="h5-formulario">Vista Previa:</h5>
-      <div *ngIf="imagen; else imgNueva">
-          <img class="image-thumbnail logoExpLab" [src]="imagenMin">
-
+      <div *ngIf="imagenBanner; else imgNuevaBanner">
+          <img class="image-thumbnail logoExpLab" [src]="imagenMinBanner">
+          <!-- <img class="image-thumbnail logoExpLab" src="{{ expLab.urlLogo }}"> -->
       </div>
 
-      <ng-template #imgNueva>
+      <ng-template #imgNuevaBanner>
         <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
-          <img src="{{ expLab.urlLogo }}" alt="Logo de la Empresa" class="image-thumbnail logoExpLab" />
+          <img src="{{ perso.urlBanner }}" alt="Imagen del Banner" class="image-thumbnail logoExpLab" />
         </div>
       </ng-template>
 
-    </div> -->
-
-
-    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
-          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
-
+    </div>
+    <!--*******************************************************************************************************-->
     <input type="submit" class="btn-submit" value="Actualizar" (click)="modif_imagenes()">
-
 
   </form>
 </div>
