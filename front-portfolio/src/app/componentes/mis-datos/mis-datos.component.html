@@ -1,8 +1,42 @@
 <div class="card mat-card" id="first-card">
-  <div id="profile-background">
-    <!--<img src="./assets/img/slide_02.jpg" />-->
-    <img src="{{ perso.urlBanner }}" />
+  <div id="profile-background" *ngIf="!imgNula(perso.urlBanner); else sinimagenbanner" >
+    <img src="{{ perso.urlBanner }}" alt="Banner del perfil" class="img-banner" />
+    <div *ngIf="isLogged" class="btn-edit btn-edit-banner" (click)="open(banner)">
+      <div>
+        <a href="#" class="btn-right btn-edit-banner-test" title="Modificar imagen del banner"
+          ><i class="fa fa-pen"></i
+        ></a>
+      </div>
+    </div>
   </div>
+  <ng-template #sinimagenbanner>
+    <div id="profile-background">
+      <img src="{{ imgBannerVacia }}" alt="Sin imagen en el banner" class="img-banner" />
+      <div *ngIf="isLogged" class="btn-edit btn-edit-banner" (click)="open(banner)">
+        <div>
+          <a href="#" class="btn-right btn-edit-banner-test" title="Modificar imagen del banner"
+            ><i class="fa fa-pen"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+    <!-- <span *ngIf="!imgNula(perso.urlBanner); else sinimagenbanner" >
+      <img src="{{ perso.urlBanner }}" alt="Banner del perfil" class="" />
+    </span>
+    <ng-template #sinimagenbanner>
+      <span>
+        <img src="{{ imgBannerVacia }}" alt="Sin imagen en el banner" class="" />
+      </span>
+    </ng-template>
+    <div *ngIf="isLogged" class="btn-edit btn-edit-foto" (click)="open(foto)">
+      <a href="#" class="btn-right" title="Modificar Foto de Perfil"
+        ><i class="fa fa-pen"></i
+      ></a>
+    </div> -->
+    <!-- <img src="{{ perso.urlBanner }}" /> -->
+  <!-- </div> -->
   <div id="info" class="ficha">
     <div class="contImg-expLab col-sm-2 centrar-h" id="info-img">
       <span *ngIf="!imgNula(perso.urlFoto); else sinimagenperfil" >
@@ -57,4 +91,8 @@
 
 <ng-template #foto let-modal>
   <app-imagen-perfil></app-imagen-perfil>
+</ng-template>
+
+<ng-template #banner let-modal>
+  <app-imagen-banner></app-imagen-banner>
 </ng-template>

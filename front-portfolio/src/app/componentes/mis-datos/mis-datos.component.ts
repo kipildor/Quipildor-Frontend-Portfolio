@@ -19,6 +19,7 @@ export class MisDatosComponent implements OnInit {
   public perso:Persona = new Persona(null, '', '', this.fecha, '',0 , '',0 , '', '', '', '', '');
   isLogged = false;
   imgVacia = "./assets/img/Perfil_001.jpeg";
+  imgBannerVacia = "./assets/img/slide_03.jpg";
   //public persoById:PersonaByIdComponent;
 
   constructor(private servi:PersonaService, private router:Router, public modalServ:NgbModal, private tokenService:TokenService) { }
