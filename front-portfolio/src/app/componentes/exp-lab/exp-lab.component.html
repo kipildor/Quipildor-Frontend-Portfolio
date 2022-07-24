@@ -12,6 +12,7 @@
    <!-- {{ listaExp | json }}-->
 
     <div *ngFor="let exp of listaExp; let i = index" id="contBloquesExpLab" class="contBloquesExpLab" >
+      <span *ngIf="i > 0"><hr class="separador-exp-lab" /></span>
 
       <div id="text-expLab-2" class="contIndividual-expLab">
         <div class="contInfo-expLab grow1_ col-sm-9">

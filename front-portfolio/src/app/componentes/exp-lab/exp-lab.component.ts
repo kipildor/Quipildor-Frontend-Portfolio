@@ -17,7 +17,7 @@ export class ExpLabComponent implements OnInit {
   public isLogged = false;
   //public expActual =0;
   public idExpBorrar =0;
-  public expBorrar:ExpLab;
+  //public expBorrar:ExpLab;
   public idExpEditar =0;
   public imgVacia = "./assets/img/sin_imagen_V1.png";
   public logoVacio:boolean;

@@ -35,6 +35,9 @@ import { ImagenBannerComponent } from './componentes/formularios/imagen-banner/i
 import { FormHabilidadesAltaComponent } from './componentes/formularios/form-habilidades/form-habilidades-alta.component';
 import { FormHabilidadesBajaComponent } from './componentes/formularios/form-habilidades/form-habilidades-baja.component';
 import { FormHabilidadesModifComponent } from './componentes/formularios/form-habilidades/form-habilidades-modif.component';
+import { FormEducacionAltaComponent } from './componentes/formularios/form-educacion/form-educacion-alta.component';
+import { FormEducacionBorrarComponent } from './componentes/formularios/form-educacion/form-educacion-borrar.component';
+import { FormEducacionModifComponent } from './componentes/formularios/form-educacion/form-educacion-modif.component';
 
 
 @NgModule({
@@ -62,7 +65,10 @@ import { FormHabilidadesModifComponent } from './componentes/formularios/form-ha
     ImagenBannerComponent,
     FormHabilidadesAltaComponent,
     FormHabilidadesBajaComponent,
-    FormHabilidadesModifComponent
+    FormHabilidadesModifComponent,
+    FormEducacionAltaComponent,
+    FormEducacionBorrarComponent,
+    FormEducacionModifComponent
   ],
   imports: [
     BrowserModule,

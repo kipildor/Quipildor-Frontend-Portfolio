@@ -1,0 +1,49 @@
+<div class="contenedor transp" >
+  <form action="" class="form" >
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">¿Borrar esta Institución?</h1>
+    </div>
+
+    <div class="contDatos">
+      <div class="contDatosIzq mt-9">
+        <h4 class="form-title titulo-nom-emp">{{ educ.nombreInstit }}</h4>
+
+          <div class="fechas-expLab">{{ educ.fechaInicio }} - <span *ngIf="educ.fechaFin!=2999;else todavia">{{ educ.fechaFin }}</span>
+            <ng-template #todavia>Hasta el momento...</ng-template>
+          </div>
+
+        <span>{{ educ.titulo }}</span>
+      </div>
+      <div class="contDatosDer mt-3 centrar-h">
+        <div *ngIf="!imgNula(); else sinimagen" class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+            <img src="{{ educ.urlLogo }}" alt="Logo {{ educ.nombreInstit }}" class="image-thumbnail logoExpLab" />
+        </div>
+
+        <ng-template #sinimagen>
+          <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+            <img src="{{ imgVacia }}" alt="Institución sin logo" class="image-thumbnail logoExpLab" />
+          </div>
+        </ng-template>
+      </div>
+
+    </div>
+
+
+
+    <input type="hidden" id="idEduc" name="idEduc" class="form-input"
+          value="{{ idEducBorrar }}" >
+
+    <input type="submit" class="btn-submit" value="Borrar" (click)="borrar_educacion()">
+
+
+  </form>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Borrando imagen...</p>
+</ngx-spinner>
+
