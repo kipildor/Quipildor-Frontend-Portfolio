@@ -1,151 +1,95 @@
 <!-- Ficha Skill's -->
 <div class="card mat-card" id="fifth-card">
-    <div id="fichaEducacion" class="ficha">
-      <h1 class="tituloFicha tituloSkill">Habilidades / Conocimiento
-        <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Habilidad o Conocimiento" ><i class="fas fa-plus-circle"></i></a> </h1>
-      <!--<div id="contBloquesSkill" class="contBloquesSkill" >-->
-
-<!--
-        <div id="text-skill-2" class="contIndividual-skill">
-
-          <div class="col-md-4 centrar-h">
-            <div class="progress yellow"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-              <div class="progress-value">
-                37.5%
-              </div>
-            </div>
-
-            <div class="contBtn-educacion col-sm-1 centrar-h">
-              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-                <a href="#" class="btn-right" title="Modificar Datos Educativos...">
-                  <i class="fa fa-pen"></i>
-                </a>
-              </div>
-              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-                <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
-                  <i class="far fa-trash-alt"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div id="text-skill-2" class="contIndividual-skill">
-          <div class="col-md-4 centrar-h">
-            <div class="progress yellow"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
-              <div class="progress-value">
-                37.5%
-              </div>
-            </div>
-
-            <div class="contBtn-educacion col-sm-1 centrar-h">
-              <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-                <a href="#" class="btn-right" title="Modificar Datos Educativos...">
-                  <i class="fa fa-pen"></i>
-                </a>
-              </div>
-              <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-                <a href="#" class="btn-right" title="Eliminar Datos de Educación...">
-                  <i class="far fa-trash-alt"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
--->
-
+  <div id="fichaEducacion" class="ficha">
+    <h1 class="tituloFicha tituloSkill">Habilidades / Conocimiento
+      <span *ngIf="isLogged" (click)="open(contAltaSkill)">
+        <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Habilidad o Conocimiento" >
+          <i class="fas fa-plus-circle"></i>
+        </a>
+      </span>
+    </h1>
 
   <!--{{ listaHabilid | json }}-->
 <!-- Barras de progreso rectas -->
-<div id="contBloquesSkill" class="contBloquesSkill col-md-12" *ngFor="let skill of listaHabilid; let i=index">
 
-  <span *ngIf="i > 0"><hr class="separadorSkill" /></span>
 
-  <div class="contIndividual-skill row">
-    <div class="contInd-skill-izq col-md-6">
-      <h3 class="progress-title">{{ skill.tecnologia }} </h3>
-      <div class="progress-outer">
-        <div class="progress">
-          <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:{{ skill.porcentaje }}%" ></div>
+    <div id="contBloquesSkill" class="contBloquesSkill col-md-12">
+      <div class="contIndividual-skill">
+        <span *ngFor="let skill of listaHabilid; let i=index">
 
-          <div class="progress-value"><span>{{ skill.porcentaje }}</span>%</div>
+          <!-- <span *ngIf="i > 0"><hr class="separadorSkill" /></span> -->
+
+
+          <div class="contInd-skill-izq col-md-4">
+            <div class="col-md-10 skill-izq">
+              <h3 class="progress-title">{{ skill.tecnologia }} </h3>
+              <div class="progress-outer">
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-danger" [ngStyle]="{'width.%': skill.porcentaje}"></div>
+
+                  <div class="progress-value"><span>{{ skill.porcentaje }}</span>%</div>
+                </div>
+              </div>
+            </div>
+            <div *ngIf="isLogged" class="contBtn-skill centrar-h_ col-md-2 skill-der">
+              <div class="btn-edit lapizAlLado" (click)="openEditar(skill.idHabilidad, contModifSkill)">
+                <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
+                  <i class="fa fa-pen"></i>
+                </a>
+              </div>
+              <div class="btn-delete lapizAlLado" (click)="openBorrar(skill.idHabilidad, contBorrarSkill)">
+                <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
+                  <i class="far fa-trash-alt"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- <div id="contBloquesSkill" class="contBloquesSkill col-md-12" *ngFor="let skill of listaHabilid; let i=index">
+
+      <span *ngIf="i > 0"><hr class="separadorSkill" /></span>
+
+      <div class="contIndividual-skill row">
+        <div class="contInd-skill-izq col-md-6">
+          <h3 class="progress-title">{{ skill.tecnologia }} </h3>
+          <div class="progress-outer">
+            <div class="progress">
+              <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:{{ skill.porcentaje }}%" ></div>
+
+              <div class="progress-value"><span>{{ skill.porcentaje }}</span>%</div>
+            </div>
+          </div>
+        </div>
+        <div *ngIf="isLogged" class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
+          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
+              <i class="fa fa-pen"></i>
+            </a>
+          </div>
+          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+            <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
+              <i class="far fa-trash-alt"></i>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-    <div *ngIf="isLogged" class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
-      <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-        <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
-          <i class="fa fa-pen"></i>
-        </a>
-      </div>
-      <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-        <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
-          <i class="far fa-trash-alt"></i>
-        </a>
-      </div>
-    </div>
+    </div> -->
+
   </div>
 </div>
 
+<ng-template #contAltaSkill let-modal>
+  <app-form-habilidades-alta></app-form-habilidades-alta>
+</ng-template>
 
-<!--
-            <div id="contBloquesSkill" class="contBloquesSkill col-md-12">
-              <div class="contIndividual-skill row">
-                <div class="contInd-skill-izq col-md-6">
-                  <h3 class="progress-title">HTML5 </h3>
-                  <div class="progress-outer">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:90%;"></div>
+<ng-template #contModifSkill let-modal>
+  <app-form-habilidades-modif></app-form-habilidades-modif>
+</ng-template>
 
-                      <div class="progress-value"><span>90</span>%</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contBtn-skill col-sm-1 centrar-h_ col-md-1">
-                  <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-                    <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
-                      <i class="fa fa-pen"></i>
-                    </a>
-                  </div>
-                  <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-                    <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
-                      <i class="far fa-trash-alt"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <hr class="separadorSkill" />
-
-              <div class="contIndividual-skill row">
-                <div class="contInd-skill-izq col-md-6">
-                  <h3 class="progress-title">PHP</h3>
-                  <div class="progress-outer">
-                    <div class="progress">
-                      <div class="progress-bar progress-bar-striped progress-bar-danger" style="width:80%;"></div>
-
-                      <div class="progress-value"><span>80</span>%</div>
-                    </div>
-                  </div>
-                </div>
-                <div class="contBtn-skill col-sm-2 centrar-h_ col-md-2">
-                  <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-                    <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
-                      <i class="fa fa-pen"></i>
-                    </a>
-                  </div>
-                  <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-                    <a href="#" class="btn-right" title="Eliminar Habilidad / Conocimiento...">
-                      <i class="far fa-trash-alt"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
--->
-
-      <!--</div>-->
-
-    </div>
-  </div>
+<ng-template #contBorrarSkill let-modal>
+  <app-form-habilidades-baja></app-form-habilidades-baja>
+</ng-template>

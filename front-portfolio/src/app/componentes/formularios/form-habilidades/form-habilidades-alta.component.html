@@ -1,0 +1,32 @@
+<div class="contenedor transp" >
+  <form action="agregar_exp_lab()" class="form" enctype="multipart/form-data">
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Agregar Habilidad/Skill...</h1>
+    </div>
+
+    <label for="nombreSkill" class="form-label">Nombre de la habilidad:</label>
+    <input type="text" id="nombreSkill" name="nombreSkill" class="form-input" placeholder="Ingrese el nombre de la habilidad"
+          value="" [(ngModel)]="skill.tecnologia" >
+
+    <label for="porcentajeSkill" class="form-label">Porcentaje de la habilidad:</label>
+    <!-- <input type="text" id="porcentajeSkill" name="porcentajeSkill" class="form-input" placeholder="Ingrese el porcentaje en que domina la habilidad"
+          value="" [(ngModel)]="skill.porcentaje" > -->
+    <select class="form-select form-input" aria-label="Default select example" id="porcentajeSkill" name="porcentajeSkill"
+            placeholder="Ingrese el porcentaje en que domina la habilidad" [(ngModel)]="skill.porcentaje" >
+      <option [value]="item" *ngFor="let item of arrayPorcentaje;let x=index"> {{ item }} </option>
+    </select>
+
+
+    <input type="submit" class="btn-submit" value="Guardar" (click)="altaHabilidad()">
+
+    <!-- {{  " ** " + skill.porcentaje }} -->
+  </form>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Cargando habilidad...</p>
+</ngx-spinner>

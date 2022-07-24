@@ -32,6 +32,9 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagenPerfilComponent } from './componentes/formularios/imagen-perfil/imagen-perfil.component';
 import { ImagenBannerComponent } from './componentes/formularios/imagen-banner/imagen-banner.component';
+import { FormHabilidadesAltaComponent } from './componentes/formularios/form-habilidades/form-habilidades-alta.component';
+import { FormHabilidadesBajaComponent } from './componentes/formularios/form-habilidades/form-habilidades-baja.component';
+import { FormHabilidadesModifComponent } from './componentes/formularios/form-habilidades/form-habilidades-modif.component';
 
 
 @NgModule({
@@ -56,7 +59,10 @@ import { ImagenBannerComponent } from './componentes/formularios/imagen-banner/i
     FormExpLabAltaComponent,
     FormExpLabModifComponent,
     ImagenPerfilComponent,
-    ImagenBannerComponent
+    ImagenBannerComponent,
+    FormHabilidadesAltaComponent,
+    FormHabilidadesBajaComponent,
+    FormHabilidadesModifComponent
   ],
   imports: [
     BrowserModule,
