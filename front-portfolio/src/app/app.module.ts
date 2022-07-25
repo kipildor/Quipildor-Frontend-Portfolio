@@ -38,6 +38,9 @@ import { FormHabilidadesModifComponent } from './componentes/formularios/form-ha
 import { FormEducacionAltaComponent } from './componentes/formularios/form-educacion/form-educacion-alta.component';
 import { FormEducacionBorrarComponent } from './componentes/formularios/form-educacion/form-educacion-borrar.component';
 import { FormEducacionModifComponent } from './componentes/formularios/form-educacion/form-educacion-modif.component';
+import { FormProyectoAltaComponent } from './componentes/formularios/form-proyecto/form-proyecto-alta.component';
+import { FormProyectoBajaComponent } from './componentes/formularios/form-proyecto/form-proyecto-baja.component';
+import { FormProyectoModifComponent } from './componentes/formularios/form-proyecto/form-proyecto-modif.component';
 
 
 @NgModule({
@@ -68,7 +71,10 @@ import { FormEducacionModifComponent } from './componentes/formularios/form-educ
     FormHabilidadesModifComponent,
     FormEducacionAltaComponent,
     FormEducacionBorrarComponent,
-    FormEducacionModifComponent
+    FormEducacionModifComponent,
+    FormProyectoAltaComponent,
+    FormProyectoBajaComponent,
+    FormProyectoModifComponent
   ],
   imports: [
     BrowserModule,

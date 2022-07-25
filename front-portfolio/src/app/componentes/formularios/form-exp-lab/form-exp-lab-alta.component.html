@@ -14,10 +14,6 @@
     <label for="fechaIng" class="form-label">Fecha de Ingreso:</label>
     <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaIng" name="fechaIng"
           class="form-input" value="{{ anioActual }}" [(ngModel)]="expLab.fechaIng">
-      <!-- <script>
-        document.querySelector("input[type=number]")
-        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
-      </script> -->
 
     <label for="fechaSalida" class="form-label">Fecha de Salida:</label>
     <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaSalida" name="fechaSalida"
@@ -28,25 +24,16 @@
             [(ngModel)]="todaviaTrabajando" (change)="cambioDelCheck($event)" >
       <label class="check-texto">Todavía trabajando</label>
     </div>
-      <!-- <script>
-        document.querySelector("input[type=number]")
-        .oninput = e => console.log(new Date(e.target.valueAsNumber, 0, 1))
-      </script> -->
 
     <label for="descripcion" class="form-label">Descripción:</label>
     <textarea type="text" id="descripcion" name="descripcion" class="form-input" placeholder="Ingrese una descripción de sus tareas"
               [(ngModel)]="expLab.descripcion" cols="100" rows="4" ></textarea>
 
-
-    <!-- <label for="urlLogo" class="form-label">Logo de la empresa:</label>
-    <input type="file" id="urlLogo" name="urlLogo" class="form-input" placeholder="Ingrese el logo de la empresa"
-          value="" [(ngModel)]="expLab.urlLogo" > -->
-
     <label for="imagen" class="form-label">Logo de la empresa:</label>
     <div class="custom-file">
       <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
             (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif">
-      <!-- <label class="custom-file-label" for="imagen">Elige una imagen</label> -->
+
     </div>
     <div *ngIf="imagen" class="mt-5_ cont-vista-previa">
       <h5 class="h5-formulario">Vista Previa:</h5>
@@ -55,16 +42,7 @@
       </div>
     </div>
 
-
-    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
-          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
-
     <input type="submit" class="btn-submit" value="Guardar" (click)="agregar_exp_lab()">
-
-    <!-- <input type="text" id="url" name="url" class="form-input" placeholder=""
-          value="{{ imagenRespuesta.imagenUrl }}" [(ngModel)]="imagenRespuesta.imagenUrl" > -->
-          <!-- {{ imagenRespuesta | json }}
-          {{ cantCambios | json }} {{ expLab.fechaSalida}}{{anioActual}}-->
 
   </form>
 </div>

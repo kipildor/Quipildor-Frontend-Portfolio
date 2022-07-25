@@ -42,73 +42,6 @@ export class FormExpLabAltaComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  /* public agregar_exp_lab():void {
-    this.onUpload();
-
-    this.expLab.urlLogo = this.imagenRespuesta.imagenUrl;
-    console.log(this.imagenRespuesta.name);
-    console.log("Dentro de agregar_exp_lab -- url: "+this.imagenRespuesta.imagenUrl);
-
-    this.serviExpLab.crearExperiencia(this.expLab).subscribe(
-      data=>{
-        this.expLab=data;
-        this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
-      },
-      err=>console.log(err)
-    );
-    //this.modalService.dismissAll();
-  } */
-
-  /* async nueva_exp_lab_completa() {
-    this.spinner.show();
-    let imagenRespuesta:Imagen = await this.onUpload()
-    //this.direccionLogo = imagenRespuesta.imagenUrl;
-    //this.llamadas(this.fun1, this.fun2);
-
-      .then(this.expLab.urlLogo = this.imagenRespuesta.imagenUrl);
-    this.expLab.idUrlLogo = await imagenRespuesta.id;
-
-    this.serviExpLab.crearExperiencia(this.expLab).subscribe(
-      data=>{
-        this.expLab=data;
-        this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
-        this.spinner.hide();
-        this.modalService.dismissAll();
-      },
-      err=>{
-        console.log(err);
-        this.spinner.hide();
-        this.modalService.dismissAll();
-      }
-    );
-    //this.modalService.dismissAll();
-  }
-
-  public llamadas(fun1, fun2) {
-    fun1(fun2);
-  }
-
-  public fun1(fun2) {
-    try {
-      this.onUpload();
-      this.expLab.urlLogo = this.direccionLogo;
-
-      console.log("1_ "+this.direccionLogo);
-    } catch (error) {
-      console.log(error);
-      this.expLab.urlLogo = null;
-    }
-  }
-
-  public fun2(agregar_exp_lab) {
-    try {
-
-      console.log("2_ "+this.direccionLogo);
-      this.agregar_exp_lab();
-    } catch (error) {
-      console.log(error);
-    }
-  } */
 
   public getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -212,28 +145,7 @@ export class FormExpLabAltaComponent implements OnInit {
       this.spinner.show();
       console.log("Paso 1 - agregar_exp_lab");
       this.onUploadMio();
-    /*    .subscribe(
-        data => {
-        this.serviExpLab.crearExperiencia(this.expLab);
-        this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
-      },
-        err=>console.log(err)
-      ); */
 
-      //this.onUpload();
-
-      //this.expLab.urlLogo = this.imagenRespuesta.imagenUrl;
-      //console.log(this.imagenRespuesta.name);
-      //console.log("Dentro de agregar_exp_lab -- url: "+this.imagenRespuesta.imagenUrl);
-
-      /* this.serviExpLab.crearExperienciaConlogo(this.expLab).subscribe(
-        data=>{
-          this.expLab=data;
-          this.expLabComp.ngOnInit();//Esto recarga el componente para que se actualice la vista
-        },
-        err=>console.log(err)
-      ); */
-      //this.modalService.dismissAll();
       console.log("Paso 1.2 - agregar_exp_lab FIN");
     }else {
       this.altaExpLab();

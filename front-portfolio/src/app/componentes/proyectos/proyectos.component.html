@@ -1,22 +1,28 @@
 <!-- Ficha Proyectos -->
 <div class="card mat-card" id="sixth-card">
   <div id="fichaProyectos" class="ficha">
-    <h1 class="tituloFicha tituloProyectos">
-      Mis Proyectos
-      <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Proyecto..."
-        ><i class="fas fa-plus-circle"></i
-      ></a>
+    <h1 class="tituloFicha tituloProyectos">Mis Proyectos
+      <span *ngIf="isLogged" (click)="open(contAltaProyecto)">
+        <a *ngIf="isLogged" href="#" class="btn-plus" title="Agregar Proyecto..."
+          ><i class="fas fa-plus-circle"></i
+        ></a>
+      </span>
     </h1>
 
     <div id="contBloquesProyectos" class="contBloquesProyectos" *ngFor="let proyecto of listaProyectos;let i=index">
 
       <span *ngIf="i > 0"><hr class="separador-proyecto" /></span>
 
-      <div id="text-proyectos-2" class="contIndividual-proyecto">
-        <div class="contInfo-proyecto grow1_ col-sm-9_">
-          <h5 id="" class="nombreProyecto">
-            {{ proyecto.nombreProy }} <span *ngIf="!urlVacia(proyecto.urlGithub)">- <a href="{{ proyecto.urlGithub }}"><i class="fab fa-github iconos1"></i></a></span>
-            <span *ngIf="!urlVacia(proyecto.urlPropia)">- <a href="{{ proyecto.urlPropia }}"><i class="fa-solid fa-globe iconos1"></i></a></span>
+      <div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
+        <div class="contInfo-proyecto grow1_ col-md-11">
+          <h5 id="" class="nombreProyecto"> {{ proyecto.nombreProy }}
+            <span *ngIf="!urlVacia(proyecto.urlGithub)">- <a href="{{ proyecto.urlGithub }}" target="_blank" >
+              <i class="fab fa-github iconos1"></i></a>
+            </span>
+
+            <span *ngIf="!urlVacia(proyecto.urlPropia)">- <a href="{{ proyecto.urlPropia }}" target="_blank" >
+              <i class="fa-solid fa-globe iconos1"></i></a>
+            </span>
           </h5>
           <div class="fecha-proyecto"><b>Año del proyecto: </b>{{ proyecto.fechaProy }}</div>
           <div class="tecnologias-proyecto">
@@ -25,143 +31,71 @@
           <div class="descripcion-proyecto">
             {{ proyecto.descripcion }}
           </div>
-          <div class="contGaleria-proyecto">
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-          </div>
+
         </div>
 
-        <div *ngIf="isLogged" class="contBtn-proyectos col-sm-1 centrar-h">
-          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
+        <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+          <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
             <a href="#" class="btn-right" title="Modificar Proyecto...">
               <i class="fa fa-pen"></i>
             </a>
           </div>
-          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
+          <div class="btn-delete lapizAlLado" (click)="openBorrar(proyecto.idProyecto, contBorrarProyecto)">
+            <a href="#" class="btn-right" title="Eliminar Proyecto...">
+              <i class="far fa-trash-alt"></i>
+            </a>
+          </div>
+        </div>
+<!-- {{ proyecto.idProyecto +" ** "+ idProyectoBorrar }} -->
+      </div>
+
+      <div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
+        <div class="contGaleria-proyecto col-md-11">
+          <img
+            src="./assets/img/logo-consudec.png"
+            alt="logo Consudec"
+            class="logoInstitutoEduc"
+          />
+          <img
+            src="./assets/img/logo-consudec.png"
+            alt="logo Consudec"
+            class="logoInstitutoEduc"
+          />
+          <img
+            src="./assets/img/logo-consudec.png"
+            alt="logo Consudec"
+            class="logoInstitutoEduc"
+          />
+        </div>
+
+        <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+          <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
+            <a href="#" class="btn-right" title="Modificar Proyecto...">
+              <i class="fa fa-pen"></i>
+            </a>
+          </div>
+          <div class="btn-delete lapizAlLado" (click)="openBorrar(proyecto.idProyecto, contBorrarProyecto)">
             <a href="#" class="btn-right" title="Eliminar Proyecto...">
               <i class="far fa-trash-alt"></i>
             </a>
           </div>
         </div>
       </div>
-
-
 
     </div>
 
+    <ng-template #contAltaProyecto let-modal>
+      <app-form-proyecto-alta></app-form-proyecto-alta>
+    </ng-template>
 
-    <!--
-    <div id="contBloquesProyectos" class="contBloquesProyectos">
-      <div id="text-proyectos-2" class="contIndividual-proyecto">
-        <div class="contInfo-proyecto grow1_ col-sm-9_">
-          <h5 id="" class="nombreProyecto">
-            Libreria Fenix (Escritorio) - <i class="fab fa-github"></i>
-          </h5>
-          <div class="fecha-proyecto"><b>Año del proyecto: </b>2021</div>
-          <div class="tecnologias-proyecto">
-            <b><i>Java - MySQL </i></b>
-          </div>
-          <div class="descripcion-proyecto">
-            El proyecto es el trabajo final del curso "Trayecto de Programador",
-            dictado por el CFP n°36 de Mataderos, el mismo consiste en una
-            aplicación de escritorio de una libreria para manejar la carga de
-            libros, clientes, etc y sus ventas.
-          </div>
-          <div class="contGaleria-proyecto">
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-          </div>
-        </div>
+    <ng-template #contModifProyecto let-modal>
+      <app-form-proyecto-modif></app-form-proyecto-modif>
+    </ng-template>
 
-        <div class="contBtn-proyectos col-sm-1 centrar-h">
-          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-            <a href="#" class="btn-right" title="Modificar Proyecto...">
-              <i class="fa fa-pen"></i>
-            </a>
-          </div>
-          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-            <a href="#" class="btn-right" title="Eliminar Proyecto...">
-              <i class="far fa-trash-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
+    <ng-template #contBorrarProyecto let-modal>
+      <app-form-proyecto-baja></app-form-proyecto-baja>
+    </ng-template>
 
-      <hr class="separador-proyecto" />
-
-      <div id="text-proyectos-2" class="contIndividual-proyecto">
-        <div class="contInfo-proyecto grow1_ col-sm-9_">
-          <h5 id="" class="nombreProyecto">
-            Contactos On Fire (Web) - <i class="fab fa-github"></i>
-          </h5>
-          <div class="fecha-proyecto"><b>Año del proyecto: </b>2019</div>
-          <div class="tecnologias-proyecto">
-            <b><i>HTML - CSS - PHP - MySQL </i></b>
-          </div>
-          <div class="descripcion-proyecto">
-            El proyecto es una página para conocer personas, la misma permite
-            crearse un perfil y realizar busquedas de perfiles para ponerse en
-            contacto.
-          </div>
-          <div class="contGaleria-proyecto">
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-            <img
-              src="./assets/img/logo-consudec.png"
-              alt="logo Consudec"
-              class="logoInstitutoEduc"
-            />
-          </div>
-        </div>
-
-        <div class="contBtn-proyectos col-sm-1 centrar-h">
-          <div class="btn-edit lapizAlLado" onclick="cambiar_parrafo()">
-            <a href="#" class="btn-right" title="Modificar Proyecto...">
-              <i class="fa fa-pen"></i>
-            </a>
-          </div>
-          <div class="btn-delete lapizAlLado" onclick="cambiar_parrafo()">
-            <a href="#" class="btn-right" title="Eliminar Proyecto...">
-              <i class="far fa-trash-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    -->
+    <!-- {{ listaProyectos | json }} -->
   </div>
 </div>

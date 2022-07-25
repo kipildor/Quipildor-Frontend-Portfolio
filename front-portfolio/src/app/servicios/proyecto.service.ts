@@ -15,7 +15,24 @@ export class ProyectoService {
 
   public listarProyectos():Observable<Proyecto[]> {
     return this.http.get<Proyecto[]>(this.proyectoURL+`/invitado`);
-
   }
+
+
+  public traerProyecto(idProyecto:number):Observable<Proyecto> {
+    return this.http.get<Proyecto>(this.proyectoURL+`/${idProyecto}`);
+  }
+
+  public crearProyecto(proyecto:Proyecto):Observable<any> {
+    return this.http.post<any>(this.proyectoURL+`/crear`, proyecto);
+  }
+
+  public borrarProyecto(idProyecto:number):Observable<any> {
+    return this.http.delete<any>(this.proyectoURL+`/borrar/${idProyecto}`);
+  }
+
+  public actualizarProyecto(idProyecto:number, proyecto:Proyecto):Observable<any> {
+    return this.http.put<any>(this.proyectoURL+`/editar/${idProyecto}`, proyecto);
+  }
+
 
 }

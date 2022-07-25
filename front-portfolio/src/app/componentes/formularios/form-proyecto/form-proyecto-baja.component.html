@@ -1,0 +1,45 @@
+<div class="contenedor transp" >
+  <form action="" class="form" enctype="multipart/form-data">
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">¿Borrar Proyecto?</h1>
+    </div>
+
+    <label for="nombreProy" class="form-label">Nombre del proyecto:</label>
+    <input type="text" id="nombreProy" name="nombreProy" class="form-input" placeholder="Ingrese el nombre del proyecto"
+          value="" [(ngModel)]="proy.nombreProy" disabled="true" >
+
+    <label for="descripcion" class="form-label">Descripción:</label>
+    <textarea type="text" id="descripcion" name="descripcion" class="form-input" placeholder="Ingrese una descripción del proyecto"
+              [(ngModel)]="proy.descripcion" cols="100" rows="2" disabled="true" ></textarea>
+
+    <label for="fechaProy" class="form-label">Fecha del proyecto:</label>
+    <input type="number" placeholder="YYYY" min="1950" max="2050" id="fechaProy" name="fechaProy"
+          class="form-input" value="{{ anioActual }}" [(ngModel)]="proy.fechaProy" disabled="true" >
+
+    <label for="urlProy" class="form-label">URL del proyecto:</label>
+    <input type="text" id="urlProy" name="urlProy" class="form-input" placeholder="Ingrese la dirección del proyecto"
+          value="" [(ngModel)]="proy.urlPropia" disabled="true" >
+
+    <label for="repositorioProy" class="form-label">Repositorio del proyecto:</label>
+    <input type="text" id="repositorioProy" name="repositorioProy" class="form-input" placeholder="Ingrese la dirección del repositorio del proyecto"
+          value="" [(ngModel)]="proy.urlGithub" disabled="true" >
+
+    <label for="tecnologias" class="form-label">Tecnologias usadas en el proyecto:</label>
+    <input type="text" id="tecnologias" name="tecnologias" class="form-input" placeholder="Ingrese las tecnologias usadas en el proyecto"
+          value="" [(ngModel)]="proy.tecnologia" disabled="true" >
+
+<!-- {{ proy | json }}
+{{ idProyectoBorrar }} -->
+
+    <input type="submit" class="btn-submit" value="Eliminar" (click)="borrar_proyecto()">
+
+  </form>
+</div>
+
+<!--
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: white">Subiendo imagen...</p>
+</ngx-spinner> -->
