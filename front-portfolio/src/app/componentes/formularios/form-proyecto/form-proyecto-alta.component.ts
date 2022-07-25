@@ -38,6 +38,20 @@ export class FormProyectoAltaComponent implements OnInit {
   }
 
   public agregar_proyecto():void {//Botón
+
+    //this.proy.urlGithub=this.proy.urlGithub.trim();
+    //this.proy.urlPropia=this.proy.urlPropia.trim();
+    if(!(this.urlVacia(this.proy.urlPropia))){
+      if(!((this.proy.urlPropia.startsWith('https://')) || (this.proy.urlPropia.startsWith('http://')))) {
+        this.proy.urlPropia = "http://" + this.proy.urlPropia;
+      }
+    }
+    if(!(this.urlVacia(this.proy.urlGithub))){
+      if(!((this.proy.urlGithub.startsWith('https://')) || (this.proy.urlGithub.startsWith('http://')))) {
+        this.proy.urlGithub = "http://" + this.proy.urlGithub;
+      }
+    }
+
     this.serviProyecto.crearProyecto(this.proy).subscribe(
       data=>{
         this.proy=data;
@@ -48,6 +62,15 @@ export class FormProyectoAltaComponent implements OnInit {
       }
     );
     this.modalService.dismissAll();
+  }
+
+  urlVacia(urlBDD:string):boolean {
+    //urlBDD=urlBDD.replace(/ /g, "");
+    if( urlBDD == null || urlBDD == undefined || urlBDD == "null" || urlBDD == "undefined" || urlBDD == "") {
+      return true;
+    } else {
+        return false;
+      }
   }
 
 }

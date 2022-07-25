@@ -29,10 +29,11 @@ export class ProyectosComponent implements OnInit {
     } else {
       this.isLogged = false;
     }
-    console.log("Logueado mis datos:"+this.isLogged);
+    console.log("Logueado proyectos:"+this.isLogged);
   }
 
-  urlVacia(urlBDD):boolean {
+  urlVacia(urlBDD:string):boolean {
+    //urlBDD=urlBDD.trim();
     if( urlBDD == null || urlBDD == undefined || urlBDD == "null" || urlBDD == "undefined" || urlBDD == "") {
       return true;
     } else {
@@ -81,10 +82,12 @@ export class ProyectosComponent implements OnInit {
     }
   }
 
-  public goToUrl(url):void {
+  /* public goToUrl(url):void {
     //let cadena:string = "'"
     document.location.href = url;
-  }
+  } */
+
+
 
 
 }
