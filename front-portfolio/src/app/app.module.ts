@@ -41,6 +41,7 @@ import { FormEducacionModifComponent } from './componentes/formularios/form-educ
 import { FormProyectoAltaComponent } from './componentes/formularios/form-proyecto/form-proyecto-alta.component';
 import { FormProyectoBajaComponent } from './componentes/formularios/form-proyecto/form-proyecto-baja.component';
 import { FormProyectoModifComponent } from './componentes/formularios/form-proyecto/form-proyecto-modif.component';
+import { FormImgProyectoAltaComponent } from './componentes/formularios/form-img-proyecto/form-img-proyecto-alta.component';
 
 
 @NgModule({
@@ -74,7 +75,8 @@ import { FormProyectoModifComponent } from './componentes/formularios/form-proye
     FormEducacionModifComponent,
     FormProyectoAltaComponent,
     FormProyectoBajaComponent,
-    FormProyectoModifComponent
+    FormProyectoModifComponent,
+    FormImgProyectoAltaComponent
   ],
   imports: [
     BrowserModule,

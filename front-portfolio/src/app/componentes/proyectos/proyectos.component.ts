@@ -72,6 +72,16 @@ export class ProyectosComponent implements OnInit {
     });
   }
 
+  /************  IMAGENES - INICIO  ******************************** */
+  openAgregarImagen(idProyecto:number, contentImgAlta) {
+    this.modalServ.open(contentImgAlta, {ariaLabelledBy: 'modal-basic-title', centered: true }).result.then((result) => {
+      this.closeResult = `Closed with: ${result}`;
+    }, (reason) => {
+      this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+    });
+  }
+  /************  IMAGENES - FIN  ******************************** */
+
   public getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';

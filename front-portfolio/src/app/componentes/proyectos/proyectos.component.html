@@ -35,6 +35,7 @@
         </div>
 
         <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+
           <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
             <a href="#" class="btn-right" title="Modificar Proyecto...">
               <i class="fa fa-pen"></i>
@@ -80,6 +81,11 @@
 
 
         <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+          <div class="btn-edit lapizAlLado" (click)="openAgregarImagen(proyecto.idProyecto, contAgregarImgProyecto)" >
+            <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
+              <i class="fas fa-plus-circle"></i>
+            </a>
+          </div>
           <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
             <a href="#" class="btn-right" title="Modificar Proyecto...">
               <i class="fa fa-pen"></i>
@@ -114,6 +120,11 @@
 
     <ng-template #contBorrarProyecto let-modal>
       <app-form-proyecto-baja></app-form-proyecto-baja>
+    </ng-template>
+
+    <!-------------------------------------------------->
+    <ng-template #contAgregarImgProyecto let-modal>
+      <app-form-img-proyecto-alta></app-form-img-proyecto-alta>
     </ng-template>
 
     <!-- {{ listaProyectos | json }} -->

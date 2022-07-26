@@ -1,0 +1,37 @@
+<div class="contenedor transp" >
+  <form action="" class="form" enctype="multipart/form-data">
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Agregar Imagen del Proyecto...</h1>
+    </div>
+
+    <label for="imagen" class="form-label">Imagen del proyecto:</label>
+    <div class="custom-file">
+      <input type="file" class="custom-file-input form-input margen-abajo-5" id="imagen" name="imagen" #imagenInputFile
+            (change)="onFileChange($event)" accept="image/png, image/jpeg, image/gif">
+
+    </div>
+    <div *ngIf="imagen" class="mt-5_ cont-vista-previa">
+      <h5 class="h5-formulario">Vista Previa:</h5>
+      <div>
+          <img class="image-thumbnail logoExpLab" [src]="imagenMin">
+      </div>
+    </div>
+
+
+    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
+          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
+
+    <input type="submit" class="btn-submit" value="Guardar" (click)="agregar_img_proy()">
+
+
+
+  </form>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: rgb(179, 127, 127)">Subiendo imagen...</p>
+</ngx-spinner>
