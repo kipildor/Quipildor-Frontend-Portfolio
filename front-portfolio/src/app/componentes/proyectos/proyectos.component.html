@@ -10,7 +10,7 @@
     </h1>
 
     <div id="contBloquesProyectos" class="contBloquesProyectos" *ngFor="let proyecto of listaProyectos;let i=index">
-
+      <!-- <span [(ngModel)]="binding"></span> -->
       <span *ngIf="i > 0"><hr class="separador-proyecto" /></span>
 
       <div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
@@ -52,55 +52,7 @@
 
 
 
-
-
-
-
-      <div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
-        <div class="contGaleria-proyecto col-md-11">
-          <img
-            src="./assets/img/logo-consudec.png"
-            alt="logo Consudec"
-            class="logoInstitutoEduc"
-          />
-          <img
-            src="./assets/img/logo-consudec.png"
-            alt="logo Consudec"
-            class="logoInstitutoEduc"
-          />
-          <img
-            src="./assets/img/logo-consudec.png"
-            alt="logo Consudec"
-            class="logoInstitutoEduc"
-          />
-        </div>
-
-
-
-
-
-
-        <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
-          <div class="btn-edit lapizAlLado" (click)="openAgregarImagen(proyecto.idProyecto, contAgregarImgProyecto)" >
-            <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
-              <i class="fas fa-plus-circle"></i>
-            </a>
-          </div>
-          <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
-            <a href="#" class="btn-right" title="Modificar Proyecto...">
-              <i class="fa fa-pen"></i>
-            </a>
-          </div>
-          <div class="btn-delete lapizAlLado" (click)="openBorrar(proyecto.idProyecto, contBorrarProyecto)">
-            <a href="#" class="btn-right" title="Eliminar Proyecto...">
-              <i class="far fa-trash-alt"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-
-
+      <app-imagen-proyecto [proyectoActual]="proyecto" [indice]="i" ></app-imagen-proyecto>
 
 
 
@@ -123,9 +75,9 @@
     </ng-template>
 
     <!-------------------------------------------------->
-    <ng-template #contAgregarImgProyecto let-modal>
+    <!-- <ng-template #contAgregarImgProyecto let-modal>
       <app-form-img-proyecto-alta></app-form-img-proyecto-alta>
-    </ng-template>
+    </ng-template> -->
 
     <!-- {{ listaProyectos | json }} -->
   </div>

@@ -1,0 +1,49 @@
+<div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
+  <div *ngFor="let imagen of listaDeImagenes; let y=index">
+    <div class="col-md-3 contImagenCompletoIndividual">
+      <div class="contGaleria-proyecto col-md-2">
+        <img src="{{ imagen.urlImg }}" alt="Imagen del proyecto" class="imgProyecto" />
+      </div>
+
+      <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+        <!-- <div class="btn-edit lapizAlLado" (click)="openAgregarImagen(imagen.idImgProy)" >
+          <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
+            <i class="fas fa-plus-circle"></i>
+          </a>
+        </div> -->
+        <div class="btn-edit lapizAlLado" (click)="openEditarImagen(imagen.idImgProy, contModifImagen)" >
+          <a href="#" class="btn-right" title="Modificar Proyecto...">
+            <i class="fa fa-pen"></i>
+          </a>
+        </div>
+        <div class="btn-delete lapizAlLado" (click)="openBorrarImagen(imagen.idImgProy, contBorrarImagen)">
+          <a href="#" class="btn-right" title="Eliminar Proyecto...">
+            <i class="far fa-trash-alt"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="col-md-3"  *ngIf="isLogged" >
+      <div class="contGaleria-proyecto" (click)="openAgregarImagen(proyectoActual.idProyecto, contAltaImagen)" >
+        <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
+          <img src="./assets/img/img_AgregarImagen.png" alt="Agregar imagen del proyecto" class="imgProyecto" />
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ng-template #contAltaImagen let-modal>
+  <app-form-img-proyecto-alta></app-form-img-proyecto-alta>
+</ng-template>
+
+<ng-template #contModifImagen let-modal>
+  <app-form-img-proyecto-modif></app-form-img-proyecto-modif>
+</ng-template>
+
+<ng-template #contBorrarImagen let-modal>
+  <app-form-img-proyecto-baja></app-form-img-proyecto-baja>
+</ng-template>

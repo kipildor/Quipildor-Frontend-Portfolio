@@ -25,7 +25,7 @@ export class FormAcercaDeAltaComponent implements OnInit {
   }
 
   public crear_parrafo():void {
-    //console.log(this.acerca.parrafo);
+    console.log("ID persona: "+this.acerca.persona_id);
     this.serviAcerca.crearParrafo(this.acerca).subscribe(
       data=>{
         this.acerca=data;

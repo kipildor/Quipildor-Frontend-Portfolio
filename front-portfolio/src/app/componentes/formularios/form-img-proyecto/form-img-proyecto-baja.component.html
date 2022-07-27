@@ -1,0 +1,35 @@
+<div class="contenedor transp" >
+  <form action="" class="form" enctype="multipart/form-data">
+    <div class="form-header">
+      <div class="barraSup">
+        <label type="button" class="btn-cierre" (click)="getDismissReason('Boton de cierre')"><i class="fa-solid fa-circle-xmark" ></i></label>
+      </div>
+      <h1 class="form-title">Borrar Imagen del Proyecto...</h1>
+    </div>
+
+    <div class="contDatosDer mt-3 centrar-h">
+      <div *ngIf="!imgNula(); else sinimagen" class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+          <img src="{{ imgProy.urlImg }}" alt="Imagen del Proyecto" class="image-thumbnail logoExpLab" />
+      </div>
+
+      <ng-template #sinimagen>
+        <div class="contImg-expLab col-md-12 centrar-h cont-vista-previa">
+          <img src="{{ imgVacia }}" alt="Faltante de la Imagen del Proyecto" class="image-thumbnail logoExpLab" />
+        </div>
+      </ng-template>
+    </div>
+
+    <!-- <input type="hidden" id="idExp" name="idExp" class="form-input"
+          value="{{acerca.idParrafo}}" [(ngModel)]="acerca.idParrafo" > -->
+
+    <input type="submit" class="btn-submit" value="Borrar" (click)="borrar_img_proy()">
+
+
+
+  </form>
+</div>
+
+
+<ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+  <p style="font-size: 20px; color: rgb(179, 127, 127)">Borrando imagen...</p>
+</ngx-spinner>

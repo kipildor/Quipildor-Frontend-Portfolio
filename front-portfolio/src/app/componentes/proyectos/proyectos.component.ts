@@ -17,6 +17,7 @@ export class ProyectosComponent implements OnInit {
   public isLogged = false;
   public idProyectoBorrar =0;
   public idProyectoEditar =0;
+  public idProyectoTemporal =0;
 
   constructor(private router:Router, private serviProy:ProyectoService, private tokenService: TokenService,
               private modalServ:NgbModal) { }
