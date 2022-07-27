@@ -77,6 +77,18 @@ div#info-data ul#info-details li a img {
     float: left;
 }
 
+.contBotonesDeMisDatos {
+  color: #ffffff;
+}
+.contBotonesDeMisDatos .btnMail a {
+  color: #ffffff;
+}
+.btnMail {
+  margin-top: 10px;
+  /* color: #ffffff !important; */
+}
+
+
 /**********************************************
 ***  Estilos del Banner  **********************
 **********************************************/
