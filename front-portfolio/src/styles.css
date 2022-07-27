@@ -3,6 +3,7 @@
 
 html{
     font-size: 15px;
+
 }
 body{
     /*
@@ -11,12 +12,22 @@ body{
     display: -ms-flexbox;
     display: flex;
     */
-    background-color: blueviolet;
+    background: url('./assets/img/fondo_001.jpg') no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    background-size: cover;
+    /* background-color: blueviolet; */
 
 }
 
 .contPP{
-    background-color: aqua;
+    /* background-color: aqua; */
+    background: url('./assets/img/fondo_002.jpg') repeat fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+    background-size: cover;
 
 }
 /* Banner junto a la ficha de Acerca de mi */
