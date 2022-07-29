@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Imagen } from '../models/imagen';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImagenService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  imagenURL = 'http://localhost:8080/cloudinary/';
+  imagenURL = this.apiUrl+'/cloudinary/';
 
   constructor(private httpClient: HttpClient) { }
 
