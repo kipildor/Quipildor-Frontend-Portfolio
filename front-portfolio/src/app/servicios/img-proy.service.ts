@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ImgProy } from '../modelos/img-proy';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImgProyService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  imagenProyURL = 'http://localhost:8080/imagen';
+  imagenProyURL = this.apiUrl+'/imagen';
 
   constructor(private http:HttpClient) { }
 

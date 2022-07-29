@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { AcercaDe } from '../modelos/acerca-de';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AcercaDeService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  acercaDeURL = 'http://localhost:8080/acerca';
+  acercaDeURL = this.apiUrl+'/acerca';
 
   constructor(private http:HttpClient) { }
 

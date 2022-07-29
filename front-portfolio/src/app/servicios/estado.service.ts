@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Estado } from '../modelos/estado';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EstadoService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  estadoURL = "http://localhost:8080/estado";
+  estadoURL = this.apiUrl+"/estado";
 
   constructor(private http:HttpClient) { }
 

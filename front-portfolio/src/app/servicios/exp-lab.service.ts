@@ -1,14 +1,16 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { ExpLab } from '../modelos/exp-lab';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ExpLabService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  expLabURL = 'http://localhost:8080/exp';
+  expLabURL = this.apiUrl+'/exp';
 
   constructor(private http:HttpClient) { }
 

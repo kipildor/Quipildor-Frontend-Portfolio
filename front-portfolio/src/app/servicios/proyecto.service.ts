@@ -2,14 +2,16 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Proyecto } from '../modelos/proyecto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProyectoService {
+  apiUrl:string = environment.apiBaseUrl;
 
-  proyectoURL = "http://localhost:8080/proyecto";
+  proyectoURL = this.apiUrl+"/proyecto";
 
   constructor(private http:HttpClient) { }
 
