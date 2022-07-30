@@ -9,7 +9,12 @@
 .contIndividual-proyecto {
     margin-top: 1rem;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+}
+
+.contInd-nivel-1, .contInd-nivel-2, .contInd-nivel-3, .contInd-nivel-4,
+.contInd-nivel-5, .contInd-nivel-6-1, .contInd-nivel-6-2, .contInd-nivel-7 {
+  float: left;
 }
 .contInfo-proyecto {
 
@@ -28,7 +33,8 @@
 
 }
 .contGaleria-proyecto {
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     /*
     display: flex;
     flex-direction: column;
@@ -52,8 +58,29 @@
 .imgProyecto {
   max-width: 300px;
   max-height: 180px;
+  margin-bottom: 3rem;
 }
 .contImagenCompletoIndividual {
   /* display: flex; */
   float: left;
 }
+
+.btnModif, .btnBorrar {
+  background-color: white;
+  border-radius: 30px;
+  padding: 15px;
+  font-size: 20px;
+}
+.btnBorrar {
+  margin-top: 20px;
+}
+
+.contInd-nivel-6-2 {
+  margin-top: 20px;
+}
+/* .contInd-nivel-6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+} */
+
+

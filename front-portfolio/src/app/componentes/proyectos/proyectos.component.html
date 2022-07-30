@@ -9,12 +9,12 @@
       </span>
     </h1>
 
-    <div id="contBloquesProyectos" class="contBloquesProyectos" *ngFor="let proyecto of listaProyectos;let i=index">
+    <div id="contBloquesProyectos" class="contBloquesProyectos container-xl" *ngFor="let proyecto of listaProyectos;let i=index">
       <!-- <span [(ngModel)]="binding"></span> -->
       <span *ngIf="i > 0"><hr class="separador-proyecto" /></span>
 
-      <div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
-        <div class="contInfo-proyecto grow1_ col-md-11">
+      <div id="text-proyectos-2" class="contIndividual-proyecto col-xl-12 container-fluid">
+        <div class="contInfo-proyecto grow1_ col-md-11 col-xl-11">
           <h5 id="" class="nombreProyecto"> {{ proyecto.nombreProy }}
             <span *ngIf="!urlVacia(proyecto.urlGithub)">- <a href="{{ proyecto.urlGithub }}" target="_blank" >
               <i class="fab fa-github iconos1"></i></a>
@@ -34,7 +34,7 @@
 
         </div>
 
-        <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+        <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 col-xl-1 centrar-h">
 
           <div class="btn-edit lapizAlLado" (click)="openEditar(proyecto.idProyecto, contModifProyecto)" >
             <a href="#" class="btn-right" title="Modificar Proyecto...">

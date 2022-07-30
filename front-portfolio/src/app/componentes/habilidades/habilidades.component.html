@@ -20,8 +20,8 @@
           <!-- <span *ngIf="i > 0"><hr class="separadorSkill" /></span> -->
 
 
-          <div class="contInd-skill-izq col-md-4">
-            <div class="col-md-10 skill-izq">
+          <div class="contInd-skill-izq col-12 col-sm-12 col-md-6 col-lg-4">
+            <div class="col-10 col-sm-10 skill-izq">
               <h3 class="progress-title">{{ skill.tecnologia }} </h3>
               <div class="progress-outer">
                 <div class="progress">
@@ -31,7 +31,7 @@
                 </div>
               </div>
             </div>
-            <div *ngIf="isLogged" class="contBtn-skill centrar-h_ col-md-2 skill-der">
+            <div *ngIf="isLogged" class="contBtn-skill centrar-h_ col-2 col-sm-2 skill-der">
               <div class="btn-edit lapizAlLado" (click)="openEditar(skill.idHabilidad, contModifSkill)">
                 <a href="#" class="btn-right" title="Modificar Habilidad / Conocimiento...">
                   <i class="fa fa-pen"></i>

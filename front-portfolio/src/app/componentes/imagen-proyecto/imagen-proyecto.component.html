@@ -1,32 +1,34 @@
-<div id="text-proyectos-2" class="contIndividual-proyecto col-md-12">
-  <div *ngFor="let imagen of listaDeImagenes; let y=index">
-    <div class="col-md-3 contImagenCompletoIndividual">
-      <div class="contGaleria-proyecto col-md-2">
-        <img src="{{ imagen.urlImg }}" alt="Imagen del proyecto" class="imgProyecto" />
+<div id="text-proyectos-2" class="contIndividual-proyecto col-md-12 col-xxl-12">
+  <div *ngFor="let imagen of listaDeImagenes; let y=index" class="col-md-6 col-xxl-4 contInd-nivel-1">
+
+    <div class="col-md-12 col-xxl-12 contImagenCompletoIndividual contInd-nivel-2">
+      <div class="contGaleria-proyecto col-md-9 col-xxl-9 contInd-nivel-3">
+        <img src="{{ imagen.urlImg }}" alt="Imagen del proyecto" class="imgProyecto contInd-nivel-4" />
       </div>
 
-      <div *ngIf="isLogged" class="contBtn-proyectos col-md-1 centrar-h">
+      <div *ngIf="isLogged" class="contBtn-proyectos col-md-2 col-xxl-2 centrar-h contInd-nivel-5">
         <!-- <div class="btn-edit lapizAlLado" (click)="openAgregarImagen(imagen.idImgProy)" >
           <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
             <i class="fas fa-plus-circle"></i>
           </a>
         </div> -->
-        <div class="btn-edit lapizAlLado" (click)="openEditarImagen(imagen.idImgProy, contModifImagen)" >
-          <a href="#" class="btn-right" title="Modificar Proyecto...">
+        <div class="btn-edit lapizAlLado contInd-nivel-6-1" (click)="openEditarImagen(imagen.idImgProy, contModifImagen)" >
+          <a href="#" class="btn-right btnModif" title="Modificar Proyecto...">
             <i class="fa fa-pen"></i>
           </a>
         </div>
-        <div class="btn-delete lapizAlLado" (click)="openBorrarImagen(imagen.idImgProy, contBorrarImagen)">
-          <a href="#" class="btn-right" title="Eliminar Proyecto...">
+        <div class="btn-delete lapizAlLado contInd-nivel-6-2" (click)="openBorrarImagen(imagen.idImgProy, contBorrarImagen)">
+          <a href="#" class="btn-right btnBorrar" title="Eliminar Proyecto...">
             <i class="far fa-trash-alt"></i>
           </a>
         </div>
       </div>
+      <div class="col-md-1 col-xxl-1 contInd-nivel-7"></div>
     </div>
   </div>
 
-  <div>
-    <div class="col-md-3"  *ngIf="isLogged" >
+  <div class="col-md-6 col-xxl-4 contInd-nivel-1">
+    <div class="col-md-12 col-xxl-12"  *ngIf="isLogged" >
       <div class="contGaleria-proyecto" (click)="openAgregarImagen(proyectoActual.idProyecto, contAltaImagen)" >
         <a href="#" class="btn-right" title="Agregar Imagen al Proyecto...">
           <img src="./assets/img/img_AgregarImagen.png" alt="Agregar imagen del proyecto" class="imgProyecto" />
