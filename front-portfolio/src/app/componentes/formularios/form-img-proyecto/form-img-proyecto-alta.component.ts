@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerService } from 'ngx-spinner';
@@ -15,12 +15,14 @@ import { ImagenProyectoComponent } from '../../imagen-proyecto/imagen-proyecto.c
 })
 export class FormImgProyectoAltaComponent implements OnInit {
 
+  @Input() proyectoID:number;
   public idPersona:number=1;//Modificarlo
   public idProyecto:number=1;//Modificarlo
   //public anioActual:number=new Date(Date.now()).getFullYear();
   //public todaviaEstudiando:boolean=false;
   //public checkFecha:boolean=false;
-  public imgProy:ImgProy= new ImgProy(null,0, '' ,this.idPersona);
+  public imgProy:ImgProy= new ImgProy(null,0, '' ,this.idProyecto);
+
 
   //************  Cloudinary  *************************
   @ViewChild('imagenInputFile', {static: false}) imagenFile: ElementRef;
@@ -38,6 +40,7 @@ export class FormImgProyectoAltaComponent implements OnInit {
               private router:Router, private spinner:NgxSpinnerService) { }
 
   ngOnInit(): void {
+    this.imgProy.proyecto_id = this.proyectoID;
   }
 
   public getDismissReason(reason: any): string {
