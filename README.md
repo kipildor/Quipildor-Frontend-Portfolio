@@ -16,7 +16,7 @@ características de este proyecto podemos mencionar que cuenta JWT (JSON Web Tok
 de roles (por ahora, en una futura revisión se espera implementarlos), también utiliza el servicio 
 de Cloudinary para almacenar las imágenes que se suban en los formularios.
 
-# Tenologías
+# Tecnologías
 Angular - Spring Boot - MySQL
 
 # Vinculación al Backend
