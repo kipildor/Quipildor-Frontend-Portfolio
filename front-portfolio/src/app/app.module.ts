@@ -29,6 +29,7 @@ import { FormExpLabAltaComponent } from './componentes/formularios/form-exp-lab/
 import { FormExpLabModifComponent } from './componentes/formularios/form-exp-lab/form-exp-lab-modif.component';
 
 import { NgxSpinnerModule } from 'ngx-spinner';
+
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ImagenPerfilComponent } from './componentes/formularios/imagen-perfil/imagen-perfil.component';
 import { ImagenBannerComponent } from './componentes/formularios/imagen-banner/imagen-banner.component';
