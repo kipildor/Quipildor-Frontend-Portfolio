@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   //apiBaseUrl: 'https://quipildor-portfolio-argprog.herokuapp.com'
-  apiBaseUrl: 'https://portfolio-kipildor.koyeb.app/'
+  apiBaseUrl: 'https://portfolio-kipildor.koyeb.app'
 };
 
 /*
